@@ -1,5 +1,14 @@
+.main-content{
+    padding: 22px 15px;
+}
+
+.bloc-text{
+    margin-top: 10px;
+}
+
 .text-slogan{
-    margin: none;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .title {
@@ -8,4 +17,38 @@
 
 .slogan{
     color: rgb(38, 110, 235);
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(38, 110, 235);
+    color: #fff;
+    font-weight: bolder;
+}
+
+.description .text{
+    font-size: 25px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+
+.instruction{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-size: 20px;
+    height: 3rem;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    color: rgb(38, 110, 235);
+    margin-bottom: 10px;
 }
