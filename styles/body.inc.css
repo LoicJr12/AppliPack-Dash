@@ -1,7 +1,11 @@
-.text-slogan h5{
+.text-slogan{
     margin: none;
 }
 
-.title, .slogan{
+.title {
     color: rgb(38, 110, 235);
 } 
+
+.slogan{
+    color: rgb(38, 110, 235);
+}
