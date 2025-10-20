@@ -1,4 +1,199 @@
-.titleMenu{
+.navbar{
+    background-color: #fff;
+}
+
+.navbar.dark{
+    background-color: #050505;
+}
+
+.titleNavbar{
     font-size: 25px;
+    font-weight: 600;
+    color: rgb(38, 110, 235);
+}
+
+.titleNavbar.dark{
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.listLink a{
+    color: rgb(38, 110, 235);
+}
+
+.listLink.dark a{
+    color: aliceblue;
+}
+
+.listLink a:hover::after{
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.container-fluid .list-Buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.link-connection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    padding: 8px;
+    background-color: transparent;
+    border: solid 2px rgb(38, 110, 235);
+    border-radius: 15px;
     font-weight: 500;
+    color : rgb(38, 110, 235);
+}
+
+.link-connection:hover{
+    color : #fff;
+    background-color: rgb(38, 110, 235);
+    font-weight: bolder;
+}
+
+.link-inscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 116.18px;
+    padding: 8px;
+    border: 2px solid rgb(38, 110, 235);
+    border-radius: 15px;
+    background-color: rgb(38, 110, 235);
+    color: white;
+    font-weight: 500;
+}
+
+.link-inscription:hover{
+    border: 2px solid rgb(38, 110, 235);
+    background-color: transparent;
+    color: rgb(38, 110, 235);
+    font-weight: bolder;
+}
+
+.bar-diviseur-vertical{
+    display: flex;
+    flex-direction: column;
+    height: 2rem;
+    border: 2px solid rgb(38, 110, 235);
+    border-radius: 10px;
+}
+
+.fa-cloud-moon, .fa-cloud-sun{
+    margin-top: 4px;
+    color: rgb(38, 110, 235);
+    cursor: pointer;
+}
+
+.container-fluid .menu-icon{
+    display: none;
+    align-items: center;
+    padding: 8px;
+    border: 2px solid rgb(38, 110, 235);
+    color : rgb(57, 123, 236);
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container-fluid .menu-icon:hover{
+    color: #fff;
+    background-color: rgb(38, 110, 235);
+    font-weight: bolder;
+}
+
+/* ------------ MENU RESPONSIVE -------------*/
+.menu-responsive{
+    display : none;
+    height: 0;          /*Pour l'effet de clique*/
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    width: 180px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /*animation pour ouvrir le menu (open)*/
+}
+
+.menu-responsive.open{  /*Pour l'effet de clique lorsqu'il va etre ouvert*/
+    height: 330px;
+    border: 1px solid rgb(38, 110, 235);
+}
+
+.menu-responsive ul{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-responsive .nav-item{
+    color: rgb(38, 110, 235);
+}
+
+.menu-responsive .nav-item:hover{
+    font-weight: bolder;
+}
+
+.menu-responsive .bar-diviseur-horizontal{
+    width: 90%;
+    border: 2px solid rgb(38, 110, 235);
+    border-radius: 10px;
+}
+
+.menu-responsive .list-Buttons-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 5px;
+}
+
+.list-Buttons-menu .link-dark-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    padding: 8px;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 3px;
+}
+
+.list-Buttons-menu .link-dark-mode:hover{
+    font-weight: bolder;
+}
+
+/* --------------- RESPONSIVE PAGE  992-------------------*/
+@media (max-width : 992px) {
+    .listLink,
+    .container-fluid .list-Buttons{
+        display: none;
+    }
+
+    .container-fluid .menu-icon{
+        display: flex;
+    }
+
+    .menu-responsive{
+        display: flex;
+    }
+
+    
 }
