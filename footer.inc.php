@@ -1,5 +1,5 @@
 <footer>
-    <div class="container-fluid">
+    <div class="container-fluid footer">
         <div class="social-media">
             <span>
                 <i class="fa-brands fa-x-twitter fa-2xl" style="color: #74C0FC;"></i>
