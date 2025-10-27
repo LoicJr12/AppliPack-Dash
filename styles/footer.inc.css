@@ -3,8 +3,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 20px 10px;
     background-color: #266EEB;
 }
 
@@ -26,4 +25,13 @@
     border: 1px solid #ffffffde;
     opacity: 60%;
     border-radius: 10px;
+}
+
+.copyright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #266EEB;
+    color: #fff;
 }
