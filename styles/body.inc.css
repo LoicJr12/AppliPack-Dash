@@ -52,3 +52,7 @@
     color: rgb(38, 110, 235);
     margin-bottom: 10px;
 }
+
+.carousel-inner .d-block{
+    height: 453px;
+}
