@@ -44,7 +44,9 @@
         </div>
     </div>
     <div class="col avis-clients">
-        <h5 class="text">Avis Clients</h5>
+        <div class="container-fluid">
+            <h3 class="text">Avis Clients</h3>
+        </div>
         <div class="row commentaires">
             <?php
                 // Tableau contenant les données (images + commentaires)

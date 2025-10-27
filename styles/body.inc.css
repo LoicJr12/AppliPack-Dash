@@ -56,3 +56,25 @@
 .carousel-inner .d-block{
     height: 453px;
 }
+
+.avis-clients{
+    padding: 15px 0px;
+}
+
+.avis-clients .container-fluid{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.avis-clients .text{
+    color:  rgb(38, 110, 235);
+    text-decoration: underline;
+}
+
+.avis-clients .commentaires{
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
