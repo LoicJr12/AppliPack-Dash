@@ -7,21 +7,21 @@
         <div class="listLink">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Infos</a>
+                    <a class="nav-link" href="#infos">Infos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">A propos de nous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacter nous</a>
+                    <a class="nav-link" href="#contacts">Contacter nous</a>
                 </li>
             </ul>
         </div>
         <div class="listButton list-Buttons">
-            <a class="nav-link link-connection" href="#">Se connecter</a>
+            <a class="nav-link link-connection" href="login.inc.php">Se connecter</a>
             <a class="nav-link link-inscription" href="#">S'inscrire</a>
             <div class="bar-diviseur-vertical"></div>
             <i class="fa-solid fa-cloud-moon"></i>
