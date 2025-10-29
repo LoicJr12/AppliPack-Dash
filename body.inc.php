@@ -7,7 +7,7 @@
                 source de stress et devrait se faire en toute sérénité.
                 <span class="slogan">Vote déménagement notre priorité</span>.
             </p>
-            <div class = "description">
+            <div class = "description" id="infos">
                 <h5 class="text">Comment ça marche</h5>
                 <div class="instruction">
                     <span class="badge text-bg-primary border border-light rounded-circle">1</span>
