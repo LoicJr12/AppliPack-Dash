@@ -1,5 +1,5 @@
 <footer>
-    <div class="container-fluid footer">
+    <div class="container-fluid footer" id="contacts">
         <div class="social-media">
             <span>
                 <i class="fa-brands fa-x-twitter fa-xl" style="color: #fff;"></i>
@@ -34,7 +34,7 @@
             </span>
             <span>
                 <i class="fa-regular fa-envelope fa-xl" style="color: #fff;"></i>
-                site@gmail.com
+                pack.dash@gmail.com
             </span>
 
         </div>
