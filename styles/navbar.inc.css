@@ -129,6 +129,7 @@
     border-radius: 10px;
     background-color: #fff;
     overflow: hidden;
+    z-index: 3;
 
     transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /*animation pour ouvrir le menu (open)*/
 }
