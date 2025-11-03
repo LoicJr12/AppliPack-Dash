@@ -7,10 +7,13 @@
             </div>
             <div class="col authentification">
                 <div>
-                    <h3>AUTHENTIFICATION</h3>
-                    <span>Entrer vos détails de connexion</span>
+                    <img src="assets/imageLogin2.jpg" alt="image login 2">
                 </div>
                 <form action="" method="post">
+                    <div class="mb-3">
+                        <h3>AUTHENTIFICATION</h3>
+                        <span class="text-body-secondary">Entrer vos détails de connexion</span>
+                    </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="xxxxx@hotmail.com">
@@ -32,7 +35,7 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <img src="assets/imageLogin.jpg" class="w-100 img-fluid" alt="image login authentification" >
+            <img src="assets/imageLogin.jpg" class="img-fluid" alt="image login authentification" >
         </div>
     </div>
 </main>
