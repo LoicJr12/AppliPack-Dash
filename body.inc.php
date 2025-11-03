@@ -1,7 +1,7 @@
 <div class="containeur-fluid main-content">
     <div class="row">
         <div class="col-lg-5 bloc-text">
-            <p class="text-slogan">
+            <p class="text-slogan" id="slogan">
                 Chez <span class="title">Pack & Dash</span>,<br>
                 Nous croyons que votre déménagement ne derait pas être une 
                 source de stress et devrait se faire en toute sérénité.

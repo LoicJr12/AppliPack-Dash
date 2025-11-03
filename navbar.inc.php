@@ -13,7 +13,7 @@
                     <a class="nav-link" href="#infos">Infos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">A propos de nous</a>
+                    <a class="nav-link" href="#slogan">A propos de nous</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contacts">Contacter nous</a>
@@ -40,19 +40,19 @@
                 <a class="nav-link active" aria-current="page" href="#">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Infos</a>
+                <a class="nav-link" href="#infos">Infos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">A propos de nous</a>
+                <a class="nav-link" href="#slogan">A propos de nous</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacter nous</a>
+                <a class="nav-link" href="#contacts">Contacter nous</a>
             </li>
         </ul>
     </div>
     <div class="bar-diviseur-horizontal"></div>
     <div class="list-Buttons-menu">
-        <a class="nav-link link-connection" href="#">Se connecter</a>
+        <a class="nav-link link-connection" href="login.inc.php">Se connecter</a>
         <a class="nav-link link-inscription" href="#">S'inscrire</a>
         <a class="nav-link link-dark-mode bg-dark" href="#">
             <span>Dark mode</span>
