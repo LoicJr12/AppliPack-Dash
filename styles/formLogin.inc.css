@@ -1,0 +1,38 @@
+.row.titre{
+    padding: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(38, 110, 235);
+}
+
+.row.titre img{
+    width: 80px;
+    height: 60px;
+}
+
+.authentification{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.auth-img{    
+    margin-bottom: 20px;
+}
+
+.auth-img img{
+    width: 150px;
+    height: 150px;
+}
+
+.formulaire{
+    border-radius: 10px;
+    box-shadow: 5px 10px 7px 5px rgb(185, 185, 185);
+}
+
+.imageLogin{
+    height: 100%;
+    width: 100%;
+}

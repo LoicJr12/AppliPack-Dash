@@ -6,10 +6,10 @@
                 Pack & Dash
             </div>
             <div class="col authentification">
-                <div>
+                <div class="auth-img">
                     <img src="assets/imageLogin2.jpg" alt="image login 2">
                 </div>
-                <form action="" method="post">
+                <form action="" method="post" class="formulaire">
                     <div class="mb-3">
                         <h3>AUTHENTIFICATION</h3>
                         <span class="text-body-secondary">Entrer vos détails de connexion</span>
@@ -34,7 +34,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 imageLogin">
             <img src="assets/imageLogin.jpg" class="img-fluid" alt="image login authentification" >
         </div>
     </div>
