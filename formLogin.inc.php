@@ -1,6 +1,6 @@
 <main>
-    <div class="row container-fluid">
-        <div class="col-lg-6">
+    <div class="row container-fluid main-content">
+        <div class="col-6">
             <div class="row titre">
                 <img src="assets/removebg-logo.png" alt="logo Pack & Dash" width="60" height="40" class="d-inline-block align-text-bottom">
                 Pack & Dash
@@ -25,16 +25,20 @@
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <label class="form-check-label" for="exampleCheck1">Remember for 30 days</label>
+                    </div>
+                    <div class="mb-3">
+                        <p><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Forgot password</a></p>
                     </div>
                     <div class="buttons-form">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="reset" class="btn btn-danger">reset</button>
+                        <p class="form-text">Do you have an account? <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sign up</a></p>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="col-lg-6 imageLogin">
+        <div class="col-6 imageLogin">
             <img src="assets/imageLogin.jpg" class="img-fluid" alt="image login authentification" >
         </div>
     </div>
