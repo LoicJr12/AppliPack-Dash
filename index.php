@@ -1,5 +1,6 @@
     <body>
         <?php
+            $title = 'Pack & Dash';
             include('header.inc.php');
             include('navbar.inc.php');
             include('body.inc.php');
