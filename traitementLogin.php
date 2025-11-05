@@ -25,7 +25,7 @@
                     header("Location: index.php");
                 }else{
                     echo "Email ou MDP incorect 🙅";
-                    header("Location: formLogin.inc.php");
+                    header("Location: login.inc.php");
                 }
             }else{
                 echo "Fill form";
