@@ -4,18 +4,6 @@
     padding: 0;
 }
 
-.row.titre{
-    padding: 15px;
-    font-size: 35px;
-    font-weight: bold;
-    color: rgb(38, 110, 235);
-}
-
-.row.titre img{
-    width: 105px;
-    height: 65px;
-}
-
 .authentification{
     display : flex;
     flex-direction: column;
@@ -25,17 +13,22 @@
     gap: 30px;
 }
 
+.auth-text{
+    color : #0D6EFD; 
+    margin-left: 70px;
+}
+
 .auth-img img{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
 }
 
 .formulaire{
-    border-radius: 10px;
+    width: 450px;
+    height: 620px;
     padding: 30px;
     box-shadow: 0px 0px 15px 4px rgb(185, 185, 185);
-    width: 450px;
-    height: 550px;
+    border-radius: 10px;
 }
 
 .buttons-form{
@@ -46,10 +39,33 @@
     align-items: center;
 }
 
+.buttons-form button{
+    width: 100%;
+}
+
 .imageLogin{
     padding: 0px;
 }
 
 .imageLogin img{
     height: 1000px;
+}
+
+.text-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------- RESPONSIVE PAGE  992-------------------*/
+@media (max-width : 992px) {
+    .imageLogin{
+        display: none;
+    }
+
+    .main-content{
+        justify-content: center;
+    }
+
 }
