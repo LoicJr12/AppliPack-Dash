@@ -10,7 +10,7 @@
                 </div>
                 <form action="traitementLogin.php" method="POST" class="formulaire">
                     <div class="mb-3">
-                        <h3 style="color : #0D6EFD;">AUTHENTIFICATION</h3>
+                        <h3 class="auth-text">AUTHENTIFICATION</h3>
                         <span class="text-body-secondary">Entrer vos détails de connexion</span>
                     </div>
                     <div class="mb-3">
