@@ -1,17 +1,16 @@
 <main>
     <div class="row container-fluid main-content">
+        <div class="col-6 imageLogin">
+            <img src="assets/imageLogin.jpg" class="img-fluid" alt="image login authentification" >
+        </div>
         <div class="col-6">
-            <div class="row titre">
-                <img src="assets/removebg-logo.png" alt="logo Pack & Dash" width="60" height="40" class="d-inline-block align-text-bottom">
-                Pack & Dash
-            </div>
             <div class="col authentification">
                 <div class="auth-img">
                     <img src="assets/imageLogin2.jpg" alt="image login 2">
                 </div>
                 <form action="traitementLogin.php" method="POST" class="formulaire">
                     <div class="mb-3">
-                        <h3>AUTHENTIFICATION</h3>
+                        <h3 style="color : #0D6EFD;">AUTHENTIFICATION</h3>
                         <span class="text-body-secondary">Entrer vos détails de connexion</span>
                     </div>
                     <div class="mb-3">
@@ -26,23 +25,18 @@
                             Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                         </div>
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember for 30 days</label>
+                    <div class="mb-3 text-link">
+                        <p class="form-text">Forgot password? <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Clic here !</a></p>
                     </div>
-                    <div class="mb-3">
-                        <p><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Forgot password</a></p>
-                    </div>
-                    <div class="buttons-form">
+                    <div class="mb-3 buttons-form">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="reset" class="btn btn-danger">reset</button>
+                    </div>
+                    <div class="text-link">
                         <p class="form-text">Do you have an account? <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sign up</a></p>
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="col-6 imageLogin">
-            <img src="assets/imageLogin.jpg" class="img-fluid" alt="image login authentification" >
         </div>
     </div>
 </main>
