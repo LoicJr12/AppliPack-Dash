@@ -11,21 +11,26 @@
             $password = $_POST['password'];
 
             if(!empty($email) && !empty($password) ){
-                $sql = "SELECT * FROM utilisateur WHERE email= :email AND password= :password";
+                $sql = "SELECT * FROM utilisateur WHERE email= :email";
+                //$sql = "SELECT * FROM utilisateur WHERE email= :email AND password= :password";
                 $request = $bdd->prepare($sql);
                 $request->execute(
                     array(
-                        "email" => "$email",
-                        "password" => "$password"
+                        "email" => "$email"
+                        //"password" => "$password"
                     )
                 );
-                $reponse = $request->fetch();
-                if($reponse['email'] == $email && $reponse['password'] == $password){
+                $user = $request->fetch();
+                //$reponse = $request->fetch();
+                if($user && $user['password'] == $password){
+                    //$reponse['email'] == $email && password_verify($password, $user['password'])
                     echo "connexion réussie 👌";
                     header("Location: index.php");
+                    exit();
                 }else{
                     echo "Email ou MDP incorect 🙅";
-                    header("Location: login.inc.php");
+                    header("Location: login.inc.php?error=1");
+                    exit();
                 }
             }else{
                 echo "Fill form";
