@@ -8,6 +8,17 @@
                 <div class="auth-img">
                     <img src="assets/imageLogin2.jpg" alt="image login 2">
                 </div>
+                <div>
+                <!-- Affichage des erreurs si elles existent -->
+                <?php if ($codErreur == 1): ?>
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                        <i class="fa-solid fa-circle-exclamation fa-xl mr-1" style="color: #ff0000ff;"></i>
+                        <div style="font-weight: bold;">
+                            incorrect Username or Password
+                        </div>
+                    </div>
+                <?php endif; ?>
+                </div>
                 <form action="traitementLogin.php" method="POST" class="formulaire">
                     <div class="mb-3">
                         <h3 class="auth-text">AUTHENTIFICATION</h3>
