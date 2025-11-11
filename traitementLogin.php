@@ -24,16 +24,15 @@
                 //$reponse = $request->fetch();
                 if($user && $user['password'] == $password){
                     //$reponse['email'] == $email && password_verify($password, $user['password'])
-                    echo "connexion réussie 👌";
                     header("Location: index.php");
                     exit();
                 }else{
-                    echo "Email ou MDP incorect 🙅";
                     header("Location: login.inc.php?error=1");
                     exit();
                 }
             }else{
-                echo "Fill form";
+                header("Location: login.inc.php?error=2");
+                exit();
             }
         }
     }catch (PDOException $e) {
