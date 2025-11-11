@@ -14,7 +14,14 @@
                     <div class="alert alert-danger d-flex align-items-center" role="alert">
                         <i class="fa-solid fa-circle-exclamation fa-xl mr-1" style="color: #ff0000ff;"></i>
                         <div style="font-weight: bold;">
-                            incorrect Username or Password
+                            incorrect email or password
+                        </div>
+                    </div>
+                <?php elseif($codErreur == 2): ?>
+                    <div class="alert alert-primary d-flex align-items-center" role="alert">
+                        <i class="fa-solid fa-circle-exclamation fa-xl mr-1" style="color: #ff0000ff;"></i>
+                        <div style="font-weight: bold;">
+                            fill in form
                         </div>
                     </div>
                 <?php endif; ?>
