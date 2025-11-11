@@ -5,6 +5,9 @@
             if (isset($_GET['error']) && $_GET['error'] == 1){
                 $codErreur=1;
                 include('formLogin.inc.php');
+            }elseif (isset($_GET['error']) && $_GET['error'] == 2) {
+                $codErreur=2;
+                include('formLogin.inc.php');
             }else{
                 $codErreur=0;
                 include('formLogin.inc.php');
