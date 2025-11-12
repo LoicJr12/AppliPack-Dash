@@ -1,4 +1,3 @@
-    <body>
         <?php
             $title = 'Pack & Dash';
             include('header.inc.php');

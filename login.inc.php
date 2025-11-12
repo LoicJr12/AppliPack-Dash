@@ -1,4 +1,3 @@
-    <body>
         <?php
             $title = 'Login Page';
             include('header.inc.php');
