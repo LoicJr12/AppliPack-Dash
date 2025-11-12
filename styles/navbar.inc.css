@@ -97,6 +97,7 @@
     cursor: pointer;
 }
 
+.profil-user,
 .container-fluid .menu-icon{
     display: none;
     align-items: center;
@@ -108,10 +109,36 @@
     cursor: pointer;
 }
 
+.profil-user:hover,
 .container-fluid .menu-icon:hover{
     color: #fff;
     background-color: rgb(38, 110, 235);
     font-weight: bolder;
+}
+
+
+.profil-user{
+    display: flex;
+    padding: 5px;
+}
+
+.rocket,
+.inbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(38, 110, 235);
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    color: rgb(38, 110, 235);
+}
+
+.rocket:hover,
+.inbox:hover{
+    color: #fff;
+    background-color: rgb(38, 110, 235);
 }
 
 /* ------------ MENU RESPONSIVE -------------*/
