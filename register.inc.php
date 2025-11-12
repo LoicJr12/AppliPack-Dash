@@ -62,7 +62,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-center">
-                        <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
+                        <p>Déjà un compte ? <a href="login.inc.php">Se connecter</a></p>
                     </div>
                 </div>
             </div>
