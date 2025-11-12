@@ -22,7 +22,7 @@
         </div>
         <div class="listButton list-Buttons">
             <a class="nav-link link-connection" href="login.inc.php">Se connecter</a>
-            <a class="nav-link link-inscription" href="#">S'inscrire</a>
+            <a class="nav-link link-inscription" href="register.php">S'inscrire</a>
             <div class="bar-diviseur-vertical"></div>
             <i class="fa-solid fa-cloud-moon"></i>
         </div>
@@ -53,7 +53,7 @@
     <div class="bar-diviseur-horizontal"></div>
     <div class="list-Buttons-menu">
         <a class="nav-link link-connection" href="login.inc.php">Se connecter</a>
-        <a class="nav-link link-inscription" href="#">S'inscrire</a>
+        <a class="nav-link link-inscription" href="register.php">S'inscrire</a>
         <a class="nav-link link-dark-mode bg-dark" href="#">
             <span>Dark mode</span>
             <i class="fa-solid fa-moon"></i>
