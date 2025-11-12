@@ -3,7 +3,7 @@
         $servername = 'localhost';
         $username = 'root';
         $password = 'root';
-        $bdd = new PDO("mysql:host=$servername;dbname=bdtestpackdash", $username, $password);
+        $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -23,8 +23,11 @@
                 $user = $request->fetch();
                 //$reponse = $request->fetch();
                 if($user && $user['password'] == $password){
-                    //$reponse['email'] == $email && password_verify($password, $user['password'])
-                    header("Location: index.php");
+                    if($user['type'] == 'client'){
+                        header("Location: customerPage.php");
+                    }else{
+                        header("Location: index.php");
+                    }
                     exit();
                 }else{
                     header("Location: login.inc.php?error=1");
