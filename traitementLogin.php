@@ -26,7 +26,7 @@
                     if($user['type'] == 'client'){
                         header("Location: customerPage.php");
                     }else{
-                        header("Location: index.php");
+                        header("Location: demenageur.php");
                     }
                     exit();
                 }else{
