@@ -51,7 +51,7 @@
                         <button type="reset" class="btn btn-danger">reset</button>
                     </div>
                     <div class="text-link">
-                        <p class="form-text">Do you have an account? <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sign up</a></p>
+                        <p class="form-text">Do you have an account? <a href="register.php" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sign up</a></p>
                     </div>
                 </form>
             </div>
