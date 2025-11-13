@@ -97,6 +97,7 @@
     cursor: pointer;
 }
 
+.deconnexion,
 .profil-user,
 .container-fluid .menu-icon{
     display: none;
@@ -116,10 +117,23 @@
     font-weight: bolder;
 }
 
-
 .profil-user{
     display: flex;
     padding: 5px;
+}
+
+.deconnexion{
+    display: flex;
+    padding: 5px;
+    color: #fff;
+    border: 2px solid rgb(220, 4, 4);
+    background-color: rgb(220, 4, 4);
+}
+
+.deconnexion:hover{
+    background-color: transparent;
+    font-weight: bolder;
+    color: #fff;
 }
 
 .rocket,
