@@ -1,0 +1,25 @@
+.containeur-search{
+    display: flex;
+    justify-content: center;
+}
+
+.SearchBar{
+    display: flex;
+    flex-direction: row;
+    padding: 8px 15px;
+    align-items: center;
+    border-radius: 25px;
+    width: 70%;
+    gap: 10px;
+    box-shadow: 1px 0px 6px 0px #dadada;
+}
+
+.SearchBar .input-bar{
+    width: 95%;
+}
+
+.input-bar input{
+    border: none;
+    width: inherit;
+    cursor: pointer;
+}
