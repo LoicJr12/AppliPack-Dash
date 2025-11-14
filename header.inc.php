@@ -10,14 +10,13 @@
             <link rel="stylesheet" href="styles/formLogin.inc.css">
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php elseif($title === 'Dashboard Demenageur'): ?>
-            <link rel="stylesheet" href="styles/navbar.inc.css">*
-            <link rel="stylesheet" href="styles/search.demenageur.css">
+            <link rel="stylesheet" href="styles/navbar.inc.css">
+            <link rel="stylesheet" href="styles/searchbar.demenageur.css">
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php else: ?>
             <link rel="stylesheet" href="styles/navbar.inc.css">
             <link rel="stylesheet" href="styles/body.inc.css">
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php endif; ?>
-
     </head>
     <body>
