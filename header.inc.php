@@ -13,6 +13,7 @@
             <link rel="stylesheet" href="styles/navbar.inc.css">
             <link rel="stylesheet" href="styles/search.demenageur.css">
             <link rel="stylesheet" href="styles/sidebar.demenageur.css">
+            <link rel="stylesheet" href="styles/formProposition.css">
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php else: ?>
             <link rel="stylesheet" href="styles/navbar.inc.css">
