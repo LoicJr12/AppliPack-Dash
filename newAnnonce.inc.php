@@ -1,12 +1,12 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card mb-5">
+            <div class="card">
                 <div class="card-header text-center bg-primary text-white">
                     <h3>Nouvelle Annonce</h3>
                 </div>
                 <div class="card-body">
-                    <form action="newAnnonce.php" method="post">
+                    <form method="post" action="newAnnonce.php">
                         <!-- Champ Titre -->
                         <div class="mb-3">
                             <label for="titre" class="form-label">Titre de l'annonce</label>
@@ -22,46 +22,20 @@
                             <label for="heure" class="form-label">Heure du déménagement</label>
                             <input type="time" class="form-control" id="heure" name="heure" required>
                         </div>
-                        <!-- Champ Ville de départ -->
-                        <div class="mb-3">
-                            <label for="villeDepart" class="form-label">Ville de départ</label>
-                            <input type="text" class="form-control" id="villeDepart" name="villeDepart" required>
-                        </div>
-                        <!-- Champ Adresse de départ -->
-                        <div class="mb-3">
-                            <label for="adresseDepart" class="form-label">Adresse de départ</label>
-                            <input type="text" class="form-control" id="adresseDepart" name="adresseDepart" required>
-                        </div>
-                        <!-- Champ Ville d'arrivée -->
-                        <div class="mb-3">
-                            <label for="villeArrivee" class="form-label">Ville d'arrivée</label>
-                            <input type="text" class="form-control" id="villeArrivee" name="villeArrivee" required>
-                        </div>
-                        <!-- Champ Adresse d'arrivée -->
-                        <div class="mb-3">
-                            <label for="adresseArrivee" class="form-label">Adresse d'arrivée</label>
-                            <input type="text" class="form-control" id="adresseArrivee" name="adresseArrivee" required>
-                        </div>
-                        <!-- Champ Type de logement -->
-                        <div class="mb-3">
-                            <label for="typeLogement" class="form-label">Type de logement</label>
-                            <select class="form-select" id="typeLogement" name="typeLogement" required>
-                                <option value="">Sélectionnez un type de logement</option>
-                                <option value="appartement">Appartement</option>
-                                <option value="maison">Maison</option>
-                                <option value="studio">Studio</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                        </div>
-                        <!-- Champ Volume à déménager -->
-                        <div class="mb-3">
-                            <label for="volume" class="form-label">Volume à déménager (en m³)</label>
-                            <input type="number" class="form-control" id="volume" name="volume" required>
-                        </div>
                         <!-- Champ Nombre de déménageurs nécessaires -->
                         <div class="mb-3">
                             <label for="nbreDemenageur" class="form-label">Nombre de déménageurs nécessaires</label>
                             <input type="number" class="form-control" id="nbreDemenageur" name="nbreDemenageur" required>
+                        </div>
+                        <!-- Champ Volume à déménager -->
+                        <div class="mb-3">
+                            <label for="volumeTotal" class="form-label">Volume à déménager (en m³)</label>
+                            <input type="number" class="form-control" id="volumeTotal" name="volumeTotal" required>
+                        </div>
+                        <!-- Champ Poids total -->
+                        <div class="mb-3">
+                            <label for="poidsTotal" class="form-label">Poids total (en kg)</label>
+                            <input type="number" class="form-control" id="poidsTotal" name="poidsTotal" required>
                         </div>
                         <!-- Champ Description -->
                         <div class="mb-3">
