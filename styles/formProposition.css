@@ -1,0 +1,22 @@
+.new-proposition{
+    width: 300px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    z-index: 4;
+}
+
+.head-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.head-form .title{
+    color: #266EEB;
+}
+
+.buttonForm{
+    justify-content: flex-end;
+    gap: 10px;
+}
