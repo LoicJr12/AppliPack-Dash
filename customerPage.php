@@ -66,7 +66,7 @@ $conn->close();
     <div class="container">
       <a class="navbar-brand" href="index.php">Pack &amp; Dash</a>
       <div class="d-flex">
-        <a href="login.inc.php" class="btn btn-outline-danger">Déconnexion</a>
+        <a href="logout.inc.php" class="btn btn-outline-danger">Déconnexion</a>
       </div>
     </div>
   </nav>

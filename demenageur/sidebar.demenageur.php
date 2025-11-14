@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item sidebar-link">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="logout.inc.php">
                         <i class="fa-solid fa-right-from-bracket"></i> 
                         Deconnexion
                     </a>
