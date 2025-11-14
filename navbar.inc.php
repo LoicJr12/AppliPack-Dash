@@ -27,22 +27,21 @@
                 <a class="nav-link link-connection" href="login.inc.php">Se connecter</a>
                 <a class="nav-link link-inscription" href="register.php">S'inscrire</a>
             <?php else: ?>
-                <a class="nav-link rocket" href="#">
+                <a class="nav-link rocket" href="#" title="nouvelles annonces">
                     <i class="fa-solid fa-rocket"></i>
                 </a>
-                <a class="nav-link inbox" href="#">
+                <a class="nav-link inbox" href="#" title="mes propositions">
                     <i class="fa-solid fa-inbox"></i>
                 </a>
-                <a class="nav-link inbox" href="#">
-                    <i class="fa-solid fa-headset"></i>
-                </a>
-                <a class="nav-link profil-user" href="#">
-                    <span>Profile</span>
+                <a class="nav-link inbox" href="#" title="mon profil">
                     <i class="fa-solid fa-user"></i>
                 </a>
             <?php endif; ?>
             <div class="bar-diviseur-vertical"></div>
-            <i class="fa-solid fa-cloud-moon"></i>
+            <a href="#" title="dark mode">
+                <i class="fa-solid fa-cloud-moon"></i>
+            </a>
+            
         </div>
         <div class="menu-icon">
             <i class="fa-solid fa-bars"></i>
@@ -69,18 +68,21 @@
                 </li>
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#infos">Nouvelles annonces</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Mes propositions</a>
+                    <a class="nav-link" href="#infos">
+                        <i class="fa-solid fa-rocket"></i>
+                        Nouvelles annonces
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">
-                        <i class="fa-solid fa-headset"></i>
-                        <span>Service client</span>
+                        <i class="fa-solid fa-inbox"></i>
+                        Mes propositions
                     </a>
                 </li>
             <?php endif ?>
@@ -106,6 +108,5 @@
             <i class="fa-solid fa-moon"></i>
         </a>
     </div>
-
 </div>
 
