@@ -1,4 +1,12 @@
         <?php
+            session_start(); // Démarrer la session
+
+            // Vérifier si l'utilisateur est connecté
+            if (!isset($_SESSION['idUtilisateur'])) {
+                header("Location: login.inc.php");
+                exit();
+            }
+
             $title = 'Dashboard Demenageur';
             include('header.inc.php');
             include('navbar.inc.php');
@@ -8,7 +16,10 @@
             <div class="row">
                 <div class="col-md-3">
                     <?php
-                        $lastName = 'Loïc :)';
+                        $lastName = "Loïc :)";
+                        if(isset($_SESSION['userName'])){
+                            $lastName=$_SESSION['userName'];
+                        }
                         include('demenageur/sidebar.demenageur.php');
                     ?>
                 </div>
