@@ -1,4 +1,5 @@
 <footer>
+    <?php if($title === 'Pack & Dash'): ?>
     <div class="container-fluid footer" id="contacts">
         <div class="social-media">
             <span>
@@ -39,6 +40,7 @@
 
         </div>
     </div>
+    <?php endif; ?>
     <div class="container-fluid copyright">
         <span>© Copyright, Tous droits reservés</span>
         <span>fait par KAKOU & HOUNKPONOU</span>
