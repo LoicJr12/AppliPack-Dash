@@ -1,7 +1,45 @@
 .sidebar{
-    height: 100%;
-    width: 250px;
-    background-color: rgb(29, 55, 94);
+    height: calc(80vh - 60px);
+    width: 220px;
+    background-color: rgb(32, 67, 119);
     color: #fff;
-    padding: 10px;
+    padding: 10px 5px;
+    margin-bottom: 1.5rem;
+    transition: 1s ease;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.head-sidebar{
+    width: 100%;
+}
+
+.underbar{
+    height: 2px;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    background: #fff;
+}
+
+.nav-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    transition: 1s ease-out;
+}
+
+.sidebar-link:hover{
+    background-color: #045bf3;
+    border-radius: 10px;
+    padding-left: 2px;
+    font-weight: bolder;
+}
+
+/* --------------- RESPONSIVE PAGE  992-------------------*/
+@media (max-width : 992px) {
+    .sidebar{
+        display: none;
+    }
 }
