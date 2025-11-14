@@ -98,7 +98,7 @@
                 <span>Profile</span>
                 <i class="fa-solid fa-user"></i>
             </a>
-            <a class="nav-link deconnexion bg-danger" href="#">
+            <a class="nav-link deconnexion bg-danger" href="logout.inc.php">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span>Deconnexion</span>
             </a>
