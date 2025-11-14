@@ -24,16 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $poidsTotal = $_POST['poidsTotal'];
     $description = $_POST['description'];
     $idClient = $_SESSION['idUtilisateur'];
+    $dateExacte = new DateTime();
+    $date_de_publication = $dateExacte->format('Y-m-d');
 
     // Connexion à la base de données
     $conn = connectToDatabase();
 
     // Préparation de la requête SQL
-    $sql = "INSERT INTO Annonce (titre, date, heure, nbreDemenageur, volumeTotal, poidsTotal, description, idClient)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Annonce (titre, date, heure, nbreDemenageur, volumeTotal, poidsTotal, description, date_de_publication, idClient)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssiddsi", $titre, $date, $heure, $nbreDemenageur, $volumeTotal, $poidsTotal, $description, $idClient);
+    $stmt->bind_param("sssiddssi", $titre, $date, $heure, $nbreDemenageur, $volumeTotal, $poidsTotal, $description, $date_de_publication, $idClient);
 
     // Exécution de la requête
     if ($stmt->execute()) {
