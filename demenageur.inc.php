@@ -1,9 +1,9 @@
         <?php
             session_start();
 
-            // Vérifier si l'utilisateur est connecté
+            //Vérifier si l'utilisateur est connecté
             if (!isset($_SESSION['idUtilisateur'])) {
-               header("Location: login.inc.php");
+                header("Location: login.inc.php");
                 exit();
             }
 
@@ -23,17 +23,17 @@
                         include('demenageur/sidebar.demenageur.php');
                     ?>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 annonces-section">
                     <div class="mb-2 mt-2">
                         <h4>🚀 Nouvelles Annonces</h3>
                     </div>
                     <?php include('demenageur/annonce.demenageur.php'); ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 proposition-section">
                     <div class="mb-2 mt-2">
                         <h4>📋 Mes Propositions</h4>
                     </div>
-                    <?php include('formProposition.inc.php'); ?>
+                    <?php include('listeProposition.inc.php'); ?>
                 </div>
             </div>
             <div>
