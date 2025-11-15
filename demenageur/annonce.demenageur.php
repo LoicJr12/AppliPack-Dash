@@ -20,7 +20,7 @@
 ?>
 
 <?php foreach($listAnnonce as $annonce) { ?>
-    <div class="card mb-3">
+    <div class="card mb-3 bg-light w-90">
         <div class="card-body">
             <h5 class="card-title"><?php echo htmlspecialchars($annonce['titre']); ?></h5>
             <p class="card-text"><?php echo htmlspecialchars($annonce['description']); ?></p>
