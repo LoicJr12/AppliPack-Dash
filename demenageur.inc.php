@@ -1,9 +1,9 @@
         <?php
-            session_start(); // Démarrer la session
+            session_start();
 
             // Vérifier si l'utilisateur est connecté
             if (!isset($_SESSION['idUtilisateur'])) {
-                header("Location: login.inc.php");
+               header("Location: login.inc.php");
                 exit();
             }
 
@@ -16,14 +16,23 @@
             <div class="row">
                 <div class="col-md-3">
                     <?php
-                        $lastName = "Loïc :)";
+                        $lastName = "Loïc";
                         if(isset($_SESSION['userName'])){
                             $lastName=$_SESSION['userName'];
                         }
                         include('demenageur/sidebar.demenageur.php');
                     ?>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-5">
+                    <div class="mb-2 mt-2">
+                        <h4>🚀 Nouvelles Annonces</h3>
+                    </div>
+                    <?php include('demenageur/annonce.demenageur.php'); ?>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-2 mt-2">
+                        <h4>📋 Mes Propositions</h4>
+                    </div>
                     <?php include('formProposition.inc.php'); ?>
                 </div>
             </div>
