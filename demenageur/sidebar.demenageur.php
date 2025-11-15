@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="head-sidebar">
-        <h3>Welcome <?php echo $lastName ?></h3>
-        <div class="underbar"></div>
+        <h3>Welcome <?php echo htmlspecialchars($lastName) ?></h3>
+        <div class="underbar mb-1"></div>
     </div>
     <nav class="nav-sidebar">
         <div class="listLink-menu">
