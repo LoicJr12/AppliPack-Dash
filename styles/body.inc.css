@@ -75,6 +75,5 @@
 .avis-clients .commentaires{
     gap: 10px;
     flex-wrap: nowrap;
-    overflow-x: scroll;
-    scrollbar-width: none;
+    overflow-x: auto;
 }
