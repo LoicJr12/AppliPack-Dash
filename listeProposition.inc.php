@@ -22,33 +22,34 @@
     }
 ?>
 
-
-<?php foreach($listeProposition as $proposition) { ?>
+<div class="displayCard"> 
+  <?php foreach($listeProposition as $proposition) { ?>
     <div class="card mb-3 w-90 bg-light">
-        <div class="card-body">
-            <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?></p>
-            <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
-            <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
-            <p class="card-text"><strong>Statut :</strong>
-                <?php if($proposition['statut'] === 'en attente') { ?>
-                    <span class="badge text-bg-warning"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-                <?php } elseif($proposition['statut'] === 'Acceptée') { ?>
-                    <span class="badge text-bg-success"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-                <?php } elseif($proposition['statut'] === 'Refusée') { ?>
-                    <span class="badge text-bg-danger"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-                <?php } ?>
-            </p>
-            <p class="card-text"><small class="text-muted">Fait le : <?php echo htmlspecialchars($proposition['date']); ?></small></p>
-            <div class="d-flex f-row buttonForm">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" 
-                    data-bs-whatever="<?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?>">
-                    contactez le 📱
-                </button>
-                <button type="button" class="btn btn-danger">Annuler ❌</button>
-            </div>
+      <div class="card-body">
+        <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?></p>
+        <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
+        <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
+        <p class="card-text"><strong>Statut :</strong>
+          <?php if($proposition['statut'] === 'en attente') { ?>
+            <span class="badge text-bg-warning"><?php echo htmlspecialchars($proposition['statut']); ?></span>
+          <?php } elseif($proposition['statut'] === 'Acceptée') { ?>
+            <span class="badge text-bg-success"><?php echo htmlspecialchars($proposition['statut']); ?></span>
+          <?php } elseif($proposition['statut'] === 'Refusée') { ?>
+            <span class="badge text-bg-danger"><?php echo htmlspecialchars($proposition['statut']); ?></span>
+          <?php } ?>
+        </p>
+        <p class="card-text"><small class="text-muted">Fait le : <?php echo htmlspecialchars($proposition['date']); ?></small></p>
+        <div class="d-flex f-row buttonForm">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+              data-bs-whatever="<?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?>">
+              contacter 💬
+            </button>
+          <button type="button" class="btn btn-danger">Annuler ❌</button>
         </div>
+      </div>
     </div>
-<?php } ?>
+  <?php } ?>
+</div>
 
 <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,23 +79,3 @@
   </div>
 </div>
 
-<script>
-    const exampleModal = document.getElementById('exampleModal')
-    if (exampleModal) {
-        exampleModal.addEventListener('show.bs.modal', event => {
-        // Button that triggered the modal
-        const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-        const recipient = button.getAttribute('data-bs-whatever')
-        // If necessary, you could initiate an Ajax request here
-        // and then do the updating in a callback.
-
-        // Update the modal's content.
-        const modalTitle = exampleModal.querySelector('.modal-title')
-        const modalBodyInput = exampleModal.querySelector('.modal-body input')
-
-        modalTitle.textContent = `New message to ${recipient}`
-        modalBodyInput.value = recipient
-    })
-}
-</script>
