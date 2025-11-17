@@ -32,7 +32,8 @@
                     <?php echo htmlspecialchars($annonce['date']).' à '.htmlspecialchars($annonce['heure']); ?>
                 </p>
                 <p class="card-text"><small class="text-muted">Publié le : <?php echo htmlspecialchars($annonce['date_de_publication']); ?></small></p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                <button class="btn btn-primary faire-proposition" type="button" data-bs-toggle="offcanvas" 
+                    data-id="<?php echo $annonce['idAnnonce']; ?>" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                     Faire une proposition 📝
                 </button>
             </div>
