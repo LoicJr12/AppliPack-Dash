@@ -1,9 +1,10 @@
-<form action="" method="get" class="new-proposition bg-light">
+<form action="traitementFormProposition.php" method="post" class="new-proposition bg-light">
     <div class="head-form mb-3">
         <h3 class="title">Nouvelle Proposition</h3>
         <span class="text-body-secondary">Remplissez les champs ci dessous</span>
     </div>
     <div class="field">
+        <input type="hidden" id="idAnnonceField" name="idAnnonce" value="">
         <div class="input-group mb-3">
             <label for="prixproposition" class="form-label">Prix</label>
             <div class="input-group">
