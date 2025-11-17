@@ -1,4 +1,11 @@
 <?php
+    //Vérifier si l'utilisateur est connecté
+    if (!isset($_SESSION['idUtilisateur'])) {
+        header("Location: login.inc.php");
+        exit();
+    }
+
+
     try {
         $servername = 'localhost';
         $username = 'root';
@@ -6,27 +13,40 @@
         $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = " SELECT p.*, a.idAnnonce, c.nom AS client_nom, c.prenom AS client_prenom, c.contact
+        $sql = "SELECT idDemenageur FROM demenageur WHERE idUtilisateur = :idUtilisateur";
+        $request = $bdd->prepare($sql);
+        $request->bindParam(':idUtilisateur', $_SESSION['idUtilisateur'], PDO::PARAM_INT);
+        $request->execute();
+        $utilisateur = $request->fetch(PDO::FETCH_ASSOC);
+        if (isset($utilisateur)) {
+          $idDemenageur = $utilisateur['idDemenageur'];
+        }
+
+        $sql2 = " SELECT p.*, a.idAnnonce, c.nom AS client_nom, c.prenom AS client_prenom, c.contact
                 FROM proposition p JOIN annonce a ON p.idAnnonce = a.idAnnonce
                 JOIN client c ON a.idClient = c.idClient 
+                WHERE p.idDemenageur = :idDemenageur
                 ORDER BY p.date DESC";
-        $request = $bdd->prepare($sql);
+        $request = $bdd->prepare($sql2);
+        $request->bindParam(':idDemenageur', $idDemenageur, PDO::PARAM_INT);
         $request->execute();
         $listeProposition = array();
         while($proposition = $request->fetch(PDO::FETCH_ASSOC)){
             $listeProposition[] = $proposition ;
         }
 
+
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
 ?>
 
+
 <div class="displayCard"> 
   <?php foreach($listeProposition as $proposition) { ?>
     <div class="card mb-3 w-90 bg-light">
       <div class="card-body">
-        <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?></p>
+        <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom']).' '.htmlspecialchars($proposition['client_nom']); ?></p>
         <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
         <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
         <p class="card-text"><strong>Statut :</strong>
@@ -44,7 +64,7 @@
               data-bs-whatever="<?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?>">
               contacter 💬
             </button>
-          <button type="button" class="btn btn-danger">Annuler ❌</button>
+          <a href="annulerProposition.php" class="btn btn-danger">Annuler ❌</a>
         </div>
       </div>
     </div>

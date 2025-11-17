@@ -10,7 +10,7 @@
             <div class="input-group">
                 <span class="input-group-text">$</span>
                 <input type="number" class="form-control" id="prixproposition" name="prix" min="0"
-                    step="100" placeholder="0.00" aria-label="Amount (to the nearest dollar)">
+                    step="0.01" placeholder="0.00" aria-label="Amount (to the nearest dollar)">
                 <span class="input-group-text">.00</span>
             </div>
         </div>
