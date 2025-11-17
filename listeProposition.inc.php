@@ -64,7 +64,7 @@
               data-bs-whatever="<?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?>">
               contacter 💬
             </button>
-          <a href="annulerProposition.php" class="btn btn-danger">Annuler ❌</a>
+          <button type="button" class="btn btn-danger btn-annuler" data-id="<?php echo $proposition['idProposition']; ?>">Annuler ❌</button>
         </div>
       </div>
     </div>
@@ -98,4 +98,3 @@
     </div>
   </div>
 </div>
-

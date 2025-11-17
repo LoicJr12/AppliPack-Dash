@@ -20,7 +20,7 @@ if (exampleModal) {
 /*----------------------------------------------------------*/
 
 
-/*--------------------Animation Proposition--------------------*/
+/*--------Recuperation id Proposition pour annonce------------*/
 document.querySelectorAll('.faire-proposition').forEach( btn => {
     btn.addEventListener('click', () => {
         const idAnnonce = btn.getAttribute('data-id');
@@ -28,4 +28,14 @@ document.querySelectorAll('.faire-proposition').forEach( btn => {
         console.log('Annonce ID set to:', idAnnonce);
     });
 });
-/*----------------------------------------------------------*/
+/*------------------------------------------------------------*/
+
+/*--------Recuperation id Proposition pour proposition------------*/
+document.querySelectorAll('.btn-annuler').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const id = this.getAttribute('data-id');
+        window.location.href = 'annulerProposition.inc.php?id=' + encodeURIComponent(id);
+    });
+  });
+/*------------------------------------------------------------*/

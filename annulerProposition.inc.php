@@ -7,7 +7,7 @@
         exit();
     }
 
-    $idProposition = $_POST['idProposition'] ?? null;
+    $idProposition = $_GET['id'] ?? null;
 
     if (isset($idProposition)) {
         try {
