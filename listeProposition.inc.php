@@ -46,19 +46,23 @@
   <?php foreach($listeProposition as $proposition) { ?>
     <div class="card mb-3 w-90 bg-light">
       <div class="card-body">
-        <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom']).' '.htmlspecialchars($proposition['client_nom']); ?></p>
-        <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
         <p class="card-text"><strong>Anonce : </strong><?php echo htmlspecialchars($proposition['titre']); ?></p>
-        <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
-        <p class="card-text"><strong>Statut :</strong>
-          <?php if($proposition['statut'] === 'en attente') { ?>
-            <span class="badge text-bg-warning"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-          <?php } elseif($proposition['statut'] === 'Acceptée') { ?>
-            <span class="badge text-bg-success"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-          <?php } elseif($proposition['statut'] === 'Refusée') { ?>
-            <span class="badge text-bg-danger"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-          <?php } ?>
-        </p>
+        <div class="d-flex flex-row gap-3">
+          <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
+          <p class="card-text"><strong>Statut :</strong>
+            <?php if($proposition['statut'] === 'en attente') { ?>
+              <span class="badge text-bg-warning"><?php echo htmlspecialchars($proposition['statut']); ?></span>
+            <?php } elseif($proposition['statut'] === 'Acceptée') { ?>
+              <span class="badge text-bg-success"><?php echo htmlspecialchars($proposition['statut']); ?></span>
+            <?php } elseif($proposition['statut'] === 'Refusée') { ?>
+              <span class="badge text-bg-danger"><?php echo htmlspecialchars($proposition['statut']); ?></span>
+            <?php } ?>
+          </p>
+        </div>
+        <div class="d-flex flex-row gap-3">
+          <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom']).' '.htmlspecialchars($proposition['client_nom']); ?></p>
+          <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
+        </div>
         <p class="card-text"><small class="text-muted">Fait le : <?php echo htmlspecialchars($proposition['date']); ?></small></p>
         <div class="d-flex f-row buttonForm">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" 

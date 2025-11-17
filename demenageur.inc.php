@@ -48,7 +48,9 @@
                     <div class="mb-2 mt-2">
                         <h4>🚀 Nouvelles Annonces</h>
                     </div>
-                    <?php include('demenageur/annonce.demenageur.php'); ?>
+                    <?php
+                        include('demenageur/annonce.demenageur.php'); 
+                    ?>
                 </div>
                 <div class="col-md-4 proposition-section">
                     <div class="mb-2 mt-2">

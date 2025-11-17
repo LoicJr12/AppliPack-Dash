@@ -1,7 +1,7 @@
 /*--------------------Animation Message--------------------*/
-const exampleModal = document.getElementById('exampleModal')
-if (exampleModal) {
-    exampleModal.addEventListener('show.bs.modal', event => {
+const fenetreMessage = document.getElementById('exampleModal')
+if (fenetreMessage) {
+    fenetreMessage.addEventListener('show.bs.modal', event => {
     // Button that triggered the modal
     const button = event.relatedTarget
     // Extract info from data-bs-* attributes
@@ -10,8 +10,8 @@ if (exampleModal) {
     // and then do the updating in a callback.
 
     // Update the modal's content.
-    const modalTitle = exampleModal.querySelector('.modal-title')
-    const modalBodyInput = exampleModal.querySelector('.modal-body input')
+    const modalTitle = fenetreMessage.querySelector('.modal-title')
+    const modalBodyInput = fenetreMessage.querySelector('.modal-body input')
 
     modalTitle.textContent = `New message to ${recipient}`
     modalBodyInput.value = recipient
@@ -19,13 +19,31 @@ if (exampleModal) {
 }
 /*----------------------------------------------------------*/
 
+/*------------------- Animation voir details ----------------*/
+const fenetreDetailsAnnonce = document.getElementById('exampleModal1')
+if (fenetreDetailsAnnonce) {
+    fenetreDetailsAnnonce.addEventListener('show.bs.modal', event => {
+        const buttonDetails = event.relatedTarget
+        const valeur = buttonDetails.getAttribute('data-id')
+        const modalBodyInput = fenetreDetailsAnnonce.querySelector('.modal-body .idAnnonceDetails')
+        // Update the modal's content.
+        const modalTitle = fenetreDetailsAnnonce.querySelector('.modal-title1')
+        modalTitle.textContent = `Details anonnce #REF-ID${valeur}`
+        modalBodyInput.value = valeur
+        window.location.href = 'demenageur.inc.php?refDetails=' + valeur;
+    })
+}
+/*-----------------------------------------------------------*/
+/*fetch("getAnnonceDetails.php?refDetails=" + encodeURIComponent(valeur))
+            .then(res => res.text())
+            .catch(err => console.error("Erreur fetch :", err));*/
+
 
 /*--------Recuperation id Proposition pour annonce------------*/
 document.querySelectorAll('.faire-proposition').forEach( btn => {
     btn.addEventListener('click', () => {
         const idAnnonce = btn.getAttribute('data-id');
         document.getElementById('idAnnonceField').value = idAnnonce;
-        console.log('Annonce ID set to:', idAnnonce);
     });
 });
 /*------------------------------------------------------------*/
