@@ -1,9 +1,10 @@
 <?php
+
     try {
         $servername = 'localhost';
         $username = 'root';
         $password = 'root';
-        $bdd = new PDO("mysql:host=$servername;dbname=packdash", $username, $password);
+        $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT * FROM annonce ORDER BY date_de_publication DESC";
@@ -13,6 +14,7 @@
         while($annonce = $request->fetch(PDO::FETCH_ASSOC)){
             $listAnnonce[] = $annonce ;
         }
+   
 
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
@@ -26,16 +28,17 @@
                 <h5 class="card-title"><?php echo htmlspecialchars($annonce['titre']); ?></h5>
                 <p class="card-text"><?php echo htmlspecialchars($annonce['description']); ?></p>
                 <p class="card-text"><strong>Nombre de demenageurs :</strong> <?php echo htmlspecialchars($annonce['nbreDemenageur']); ?></p>
-                <p class="card-text"><strong>Surface :</strong> <?php echo htmlspecialchars($annonce['volumeTotal']); ?></p>
+                <p class="card-text"><strong>Surface :</strong> <?php echo htmlspecialchars($annonce['volumeTotal']); ?> m²</p>
                 <p class="card-text">
                     <strong>Date et heure du déménagement :</strong> 
                     <?php echo htmlspecialchars($annonce['date']).' à '.htmlspecialchars($annonce['heure']); ?>
                 </p>
                 <p class="card-text"><small class="text-muted">Publié le : <?php echo htmlspecialchars($annonce['date_de_publication']); ?></small></p>
-                <button class="btn btn-primary faire-proposition" type="button" data-bs-toggle="offcanvas" 
+                <button class="btn btn-success faire-proposition" type="button" data-bs-toggle="offcanvas" 
                     data-id="<?php echo $annonce['idAnnonce']; ?>" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                     Faire une proposition 📝
                 </button>
+                <button class="btn btn-primary">voir details</button>
             </div>
         </div>
     <?php } ?>

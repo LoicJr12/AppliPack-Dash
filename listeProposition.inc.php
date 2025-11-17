@@ -10,7 +10,7 @@
         $servername = 'localhost';
         $username = 'root';
         $password = 'root';
-        $bdd = new PDO("mysql:host=$servername;dbname=packdash", $username, $password);
+        $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT idDemenageur FROM demenageur WHERE idUtilisateur = :idUtilisateur";
