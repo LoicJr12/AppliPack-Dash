@@ -1,3 +1,4 @@
+/*--------------------Animation Message--------------------*/
 const exampleModal = document.getElementById('exampleModal')
 if (exampleModal) {
     exampleModal.addEventListener('show.bs.modal', event => {
@@ -16,3 +17,15 @@ if (exampleModal) {
     modalBodyInput.value = recipient
     })
 }
+/*----------------------------------------------------------*/
+
+
+/*--------------------Animation Proposition--------------------*/
+document.querySelectorAll('.faire-proposition').forEach( btn => {
+    btn.addEventListener('click', () => {
+        const idAnnonce = btn.getAttribute('data-id');
+        document.getElementById('idAnnonceField').value = idAnnonce;
+        console.log('Annonce ID set to:', idAnnonce);
+    });
+});
+/*----------------------------------------------------------*/
