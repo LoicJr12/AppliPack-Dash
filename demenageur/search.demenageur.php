@@ -1,4 +1,4 @@
-<form action="" method="post" class="mt-3 mb-3">
+<form action="" method="post" class="mt-3 mb-3 bg-light">
     <div class="container-fluid containeur-search">
         <div class="SearchBar">
             <i class="fa-solid fa-magnifying-glass"></i>

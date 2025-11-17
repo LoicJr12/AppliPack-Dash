@@ -5,7 +5,7 @@ try {
     $servername = 'localhost';
     $username = 'root';
     $password = 'root';
-    $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
+    $bdd = new PDO("mysql:host=$servername;dbname=packdash", $username, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {

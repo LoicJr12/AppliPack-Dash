@@ -7,6 +7,8 @@
                 exit();
             }
 
+            
+
             $title = 'Dashboard Demenageur';
             include('header.inc.php');
             include('navbar.inc.php');
@@ -16,9 +18,28 @@
             <div class="row gx-4">
                 <div class="sidebar-section">
                     <?php
-                        $lastName = "Loïc";
-                        if(isset($_SESSION['userName'])){
-                            $lastName=$_SESSION['userName'];
+                        try{
+                            $servername = 'localhost';
+                            $username = 'root';
+                            $password = 'root';
+                            $bdd = new PDO("mysql:host=$servername;dbname=packdash", $username, $password);
+                            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                            $sql = "SELECT nomEntreprise FROM demenageur WHERE idUtilisateur = :idUtilisateur";
+                            $request = $bdd->prepare($sql);
+                            $request->bindParam(':idUtilisateur', $_SESSION['idUtilisateur'], PDO::PARAM_INT);
+                            $request->execute();
+                            $utilisateur = $request->fetch(PDO::FETCH_ASSOC);
+                            if (isset($utilisateur)) {
+                                $nomEntreprise = $utilisateur['nomEntreprise'];
+                            }
+
+                        }catch(PDOException $e){
+                            echo "Erreur : " . $e->getMessage();
+                        }
+                        $lastName = 'User-Test';
+                        if(isset($nomEntreprise)){
+                            $lastName=$nomEntreprise;
                         }
                         include('demenageur/sidebar.demenageur.php');
                     ?>

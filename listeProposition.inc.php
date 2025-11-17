@@ -10,7 +10,7 @@
         $servername = 'localhost';
         $username = 'root';
         $password = 'root';
-        $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
+        $bdd = new PDO("mysql:host=$servername;dbname=packdash", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT idDemenageur FROM demenageur WHERE idUtilisateur = :idUtilisateur";
@@ -22,7 +22,7 @@
           $idDemenageur = $utilisateur['idDemenageur'];
         }
 
-        $sql2 = " SELECT p.*, a.idAnnonce, c.nom AS client_nom, c.prenom AS client_prenom, c.contact
+        $sql2 = " SELECT p.*, a.idAnnonce, a.titre, c.nom AS client_nom, c.prenom AS client_prenom, c.contact
                 FROM proposition p JOIN annonce a ON p.idAnnonce = a.idAnnonce
                 JOIN client c ON a.idClient = c.idClient 
                 WHERE p.idDemenageur = :idDemenageur
@@ -48,6 +48,7 @@
       <div class="card-body">
         <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom']).' '.htmlspecialchars($proposition['client_nom']); ?></p>
         <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
+        <p class="card-text"><strong>Anonce : </strong><?php echo htmlspecialchars($proposition['titre']); ?></p>
         <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
         <p class="card-text"><strong>Statut :</strong>
           <?php if($proposition['statut'] === 'en attente') { ?>
