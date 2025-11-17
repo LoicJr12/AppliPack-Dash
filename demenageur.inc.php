@@ -1,11 +1,11 @@
         <?php
-            //session_start();
+            session_start();
 
             //Vérifier si l'utilisateur est connecté
-            //if (!isset($_SESSION['idUtilisateur'])) {
-            //    header("Location: login.inc.php");
-            //    exit();
-            //}
+            if (!isset($_SESSION['idUtilisateur'])) {
+                header("Location: login.inc.php");
+                exit();
+            }
 
             $title = 'Dashboard Demenageur';
             include('header.inc.php');
@@ -42,6 +42,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script src="styles/animation.menu.js"></script>
-        <script src="styles/animation.message.js"></script>
+        <script src="styles/animation.demenageur.js"></script>
     </body>
 </html>
