@@ -57,3 +57,29 @@ document.querySelectorAll('.btn-annuler').forEach(button => {
     });
   });
 /*------------------------------------------------------------*/
+
+
+/*****CHANGEMENT DE DISPOSTION PAR SIDEBAR LINK ****************/
+const linkDashboard = document.querySelector('.dashboard')
+const linkNewAnnonce = document.querySelector('.newAnnonce')
+const linkMesPropositions = document.querySelector('.mesPropositions')
+
+const sectionAnnonce = document.querySelector('.annonces-section');
+const sectionProposition = document.querySelector('.proposition-section');
+const displayCard = document.querySelector('.displayCard');
+const card = document.querySelector('.card ');
+
+
+if(linkDashboard){
+    linkNewAnnonce.addEventListener('click', () => {
+        sectionProposition.classList.toggle('d-none');
+        console.log(sectionProposition);
+        sectionAnnonce.classList.toggle('col-md-8');
+        console.log(sectionAnnonce);
+        displayCard.classList.toggle('row gap-2');
+        console.log(displayCard);
+        card.classList.toggle('col-5')
+        console.log(card);
+    });
+}
+/*------------------------------------------------------------*/

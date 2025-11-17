@@ -6,25 +6,25 @@
     <nav class="nav-sidebar">
         <div class="listLink-menu">
             <ul class="navbar-nav">
-                <li class="nav-item sidebar-link">
+                <li class="nav-item sidebar-link dashboard">
                     <a class="nav-link" href="#">
                         <i class="fa-solid fa-house"></i>
                         Dashboard
                     </a>
                 </li>
-                <li class="nav-item sidebar-link">
+                <li class="nav-item sidebar-link newAnnonce">
                     <a class="nav-link" href="#">
                         <i class="fa-solid fa-rocket"></i>
                         Nouvelles annonces
                     </a>
                 </li>
-                <li class="nav-item sidebar-link">
+                <li class="nav-item sidebar-link mesPropositions">
                     <a class="nav-link" href="#">
                         <i class="fa-solid fa-inbox"></i>
                         Mes propositions
                     </a>
                 </li>
-                <li class="nav-item sidebar-link">
+                <li class="nav-item sidebar-link monprofile">
                     <a class="nav-link" href="#">
                         <i class="fa-solid fa-user"></i>
                         Mon profile
