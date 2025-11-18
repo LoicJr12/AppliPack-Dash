@@ -86,7 +86,7 @@ $stmtUser->close();
                 header("Location: customerPage.php");
             } else {
                 // ⚠️ adapte le nom de la page déménageur
-                header("Location: moverPage.php");
+                header("Location: demenageur.inc.php");
             }
             exit();
 
