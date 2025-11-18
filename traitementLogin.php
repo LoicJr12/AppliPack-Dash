@@ -18,7 +18,7 @@ try {
             $request->execute(array("email" => $email));
             $user = $request->fetch();
 
-            if($user && $user['password'] == $password) {
+            if($user && password_verify($password, $user['password'])) {
                 // Stocker les informations de l'utilisateur dans la session
                 $_SESSION['idUtilisateur'] = $user['idUtilisateur'];
                 $_SESSION['userName'] = $user['userName'];
