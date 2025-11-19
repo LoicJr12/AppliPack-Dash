@@ -46,6 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $volumeTotal     = (float)($_POST['volumeTotal'] ?? 0);
     $poidsTotal      = (float)($_POST['poidsTotal'] ?? 0);
 
+    //------ date de publication j'ai rajouté ca a la table annonce et proposition (MODIF1) ------
+    $dateExacte = new DateTime();
+    $date_de_publication = $dateExacte->format('Y-m-d');
+    //------------------------------------------------------------------------------------
+
     // --- Logement départ ---
     $ville_depart    = trim($_POST['ville_depart'] ?? '');
     $etage_depart    = (int)($_POST['etage_depart'] ?? 0);
@@ -74,14 +79,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $conn->begin_transaction();
 
             // 3.1) INSERT Annonce  (backticks sur `date` et `heure`)
+            // J'ai rajouté date_de_publication dans la requete aussi (MODIF 2)--------------------------
             $sqlA = "INSERT INTO Annonce
-                     (titre, description, `date`, `heure`, nbreDemenageur, volumeTotal, poidsTotal, idClient)
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                     (titre, description, `date`, `heure`, nbreDemenageur, volumeTotal, poidsTotal, idClient, date_de_publication)
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmtA = $conn->prepare($sqlA);
+            // // J'ai rajouté un S pour que la requete sur la date de plication marche (MODIF 2)--------------------------
             $stmtA->bind_param(
-                "ssssiddi",
+                "ssssiddis",
                 $titre, $description, $date, $heure,
-                $nbreDemenageur, $volumeTotal, $poidsTotal, $idClient
+                $nbreDemenageur, $volumeTotal, $poidsTotal, $idClient, $date_de_publication
             );
             $stmtA->execute();
             $idAnnonce = $stmtA->insert_id;
