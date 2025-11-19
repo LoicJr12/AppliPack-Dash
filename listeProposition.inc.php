@@ -22,7 +22,7 @@
           $idDemenageur = $utilisateur['idDemenageur'];
         }
 
-        $sql2 = " SELECT p.*, a.idAnnonce, a.titre, c.nom AS client_nom, c.prenom AS client_prenom, c.contact
+        $sql2 = " SELECT p.*, a.idAnnonce, a.titre, c.idClient as client_id, c.nom AS client_nom, c.prenom AS client_prenom, c.contact
                 FROM proposition p JOIN annonce a ON p.idAnnonce = a.idAnnonce
                 JOIN client c ON a.idClient = c.idClient 
                 WHERE p.idDemenageur = :idDemenageur
@@ -42,11 +42,11 @@
 ?>
 
 
-<div class="displayCard"> 
+<div class="displayCard displayCardProposition"> 
   <?php foreach($listeProposition as $proposition) { ?>
-    <div class="card mb-3 w-90 bg-light">
+    <div class="card mb-3 w-90 bg-light cardProposition">
       <div class="card-body">
-        <p class="card-text"><strong>Anonce : </strong><?php echo htmlspecialchars($proposition['titre']); ?></p>
+        <p class="card-text"><strong>Annonce : </strong><?php echo htmlspecialchars($proposition['titre']); ?></p>
         <div class="d-flex flex-row gap-3">
           <p class="card-text"><strong>Prix proposé 💵:</strong> <?php echo htmlspecialchars($proposition['prixPropose']); ?> €</p>
           <p class="card-text"><strong>Statut :</strong>
@@ -59,6 +59,7 @@
             <?php } ?>
           </p>
         </div>
+        <p class="card-text"><strong>Message :</strong> <?php echo htmlspecialchars($proposition['message']); ?></p>
         <div class="d-flex flex-row gap-3">
           <p class="card-text"><strong>Client 🪪:</strong> <?php echo htmlspecialchars($proposition['client_prenom']).' '.htmlspecialchars($proposition['client_nom']); ?></p>
           <p class="card-text"><strong>Contact 📞:</strong> <?php echo htmlspecialchars($proposition['contact']); ?></p>
@@ -66,9 +67,11 @@
         <p class="card-text"><small class="text-muted">Fait le : <?php echo htmlspecialchars($proposition['date']); ?></small></p>
         <div class="d-flex f-row buttonForm">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" 
-              data-bs-whatever="<?php echo htmlspecialchars($proposition['client_prenom'].' '.$proposition['client_nom']); ?>">
+              data-bs-whatever="<?php echo htmlspecialchars($proposition['client_nom']); ?>"
+              data-id="<?php echo htmlspecialchars($proposition['client_id']); ?>">
               contacter 💬
             </button>
+            <input type="hidden" class="idPropositionHidden" value="<?php echo $proposition['idProposition']; ?>">
           <button type="button" class="btn btn-danger btn-annuler" data-id="<?php echo $proposition['idProposition']; ?>">Annuler ❌</button>
         </div>
       </div>
@@ -85,14 +88,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Destinataire :</label>
-            <input type="text" class="form-control" id="recipient-name" readonly>
+        <form action="" method="post">
+          <input type="hidden" class="form-control" id="recipient-name" name="idClient">
+          <input type="hidden" class="form-control idPropositionHidden" id="recipient-n" name="idProposition">
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea class="form-control" id="message-text" name="message"></textarea>
           </div>
         </form>
       </div>
