@@ -16,10 +16,10 @@
         }
         
         //------------ Recup logement ville arrivée ------------------------
-        $sql = "SELECT idAnnonce, ville as villeArrivee FROM logement WHERE type = :type";
+        $sql = "SELECT idAnnonce, ville as villeArrivee FROM logement WHERE statut = :statut";
         $request = $bdd->prepare($sql);
-        $type = 'arrivee';
-        $request->bindParam(':type', $type, PDO::PARAM_STR);
+        $statut = 'arrivee';
+        $request->bindParam(':statut', $statut, PDO::PARAM_STR);
         $request->execute();
         $listLogemementArrivee = array();
         while($logementArrivee = $request->fetch(PDO::FETCH_ASSOC)){
@@ -27,10 +27,10 @@
         }
 
         //------------ Recup logement ville arrivée ------------------------
-        $sql = "SELECT idAnnonce, ville as villeDepart FROM logement WHERE type = :type";
+        $sql = "SELECT idAnnonce, ville as villeDepart FROM logement WHERE statut = :statut";
         $request = $bdd->prepare($sql);
-        $type = 'depart';
-        $request->bindParam(':type', $type, PDO::PARAM_STR);
+        $statut = 'depart';
+        $request->bindParam(':statut', $statut, PDO::PARAM_STR);
         $request->execute();
         $listLogemementDepart = array();
         while($logementDepart  = $request->fetch(PDO::FETCH_ASSOC)){
@@ -42,9 +42,9 @@
     }
 ?>
 
-<div class="displayCard">
+<div class="displayCard displayCardAnnonce">
     <?php foreach($listAnnonce as $annonce) { ?>
-        <div class="card mb-3 bg-light">
+        <div class="card mb-3 bg-light cardAnnonce">
             <div class="card-body">
                 <h5 class="card-title"><?php echo htmlspecialchars($annonce['titre']); ?></h5>
                 <p class="card-text"><?php echo htmlspecialchars($annonce['description']); ?></p>
