@@ -79,7 +79,7 @@
                     data-id="<?php echo $annonce['idAnnonce']; ?>" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                     Faire une proposition 📝
                 </button>
-                <a href="demenageur/voirDetailsAnnonce.php?ref=<?php echo htmlspecialchars($annonce['idAnnonce']); ?>" class="btn btn-primary" >
+                <a href="detailsAnnonce.demenageur.php?ref=<?php echo htmlspecialchars($annonce['idAnnonce']); ?>" class="btn btn-primary" >
                     voir details
                 </a>
             </div>
