@@ -58,24 +58,34 @@
                             <div class="mb-3 client-fields">
                                 <label for="nom" class="form-label">Nom</label>
                                 <input type="text" class="form-control" id="nom" name="nom"
-                                       value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>">
+                                       value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
                             </div>
                             <div class="mb-3 client-fields">
                                 <label for="prenom" class="form-label">Prénom</label>
                                 <input type="text" class="form-control" id="prenom" name="prenom"
-                                       value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>">
+                                    maxlength="10" pattern="[0-9]{10}" value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>" required>
+                            </div>
+                            <div class="mb-3 client-fields" style="display: none;">
+                                <label for="contact_client" class="form-label">contact</label>
+                                <input type="tel" class="form-control" id="contact_client" name="contact_client"
+                                        value="<?= htmlspecialchars($_POST['contact_client'] ?? '') ?>" required>
                             </div>
 
                             <!-- Champs Déménageur -->
                             <div class="mb-3 mover-fields" style="display: none;">
                                 <label for="nomEntreprise" class="form-label">Nom de l'entreprise</label>
                                 <input type="text" class="form-control" id="nomEntreprise" name="nomEntreprise"
-                                       value="<?= htmlspecialchars($_POST['nomEntreprise'] ?? '') ?>">
+                                       value="<?= htmlspecialchars($_POST['nomEntreprise'] ?? '') ?>" required>
                             </div>
                             <div class="mb-3 mover-fields" style="display: none;">
                                 <label for="adresse" class="form-label">Adresse</label>
                                 <input type="text" class="form-control" id="adresse" name="adresse"
-                                       value="<?= htmlspecialchars($_POST['adresse'] ?? '') ?>">
+                                       value="<?= htmlspecialchars($_POST['adresse'] ?? '') ?>" required>
+                            </div>
+                            <div class="mb-3 mover-fields" style="display: none;">
+                                <label for="contact_demenageur" class="form-label">contact</label>
+                                <input type="tel" class="form-control" id="contact_demenageur" name="contact_demenageur"
+                                    maxlength="10" pattern="[0-9]{10}" value="<?= htmlspecialchars($_POST['contact_demenageur'] ?? '') ?>" required>
                             </div>
 
                             <!-- Bouton -->
