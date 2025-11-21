@@ -49,10 +49,20 @@ include 'moverList.inc.php';
               <p><strong>Message :</strong> <?= htmlspecialchars($p['message']) ?></p>
               <p><strong>Contact :</strong> <?= htmlspecialchars($p['contact'] ?? '') ?></p>
               <p><strong>Adresse :</strong> <?= htmlspecialchars($p['adresse'] ?? '') ?></p>
+              <p class="card-text"><strong>Statut :</strong>
+                <?php if($p['statut'] === 'en attente') { ?>
+                  <span class="badge text-bg-warning"><?php echo htmlspecialchars($p['statut']); ?></span>
+                <?php } elseif($p['statut'] === 'acceptee') { ?>
+                  <span class="badge text-bg-success"><?php echo htmlspecialchars($p['statut']); ?></span>
+                <?php } elseif($p['statut'] === 'refusee') { ?>
+                  <span class="badge text-bg-danger"><?php echo htmlspecialchars($p['statut']); ?></span>
+                <?php } ?>
+              </p>
               <div class="d-flex flex-row gap-3">
-                <a href="accepterPropostion.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>"
+                <a href="accepterPropostion.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>&id=<?= (int)$p['idDemenageur'] ?>"
                  class="btn btn-success">Accepter</a>
-                 <a href="refuserProposition.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>" class="btn btn-danger">Refuser</a>
+                 <a href="refuserProposition.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>&id=<?= (int)$p['idDemenageur'] ?>" 
+                 class="btn btn-danger">Refuser</a>
               </div>
             </div>
           </div>
