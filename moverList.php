@@ -1,27 +1,9 @@
 <?php
 $title = "Liste des propositions - Pack & Dash";
 include 'moverList.inc.php';
+include 'header.inc.php';
+include 'navbar.inc.php';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Propositions pour l'annonce — Pack & Dash</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/footer.inc.css">
-</head>
-<body class="bg-light">
-
-<nav class="navbar navbar-light bg-white border-bottom">
-  <div class="container">
-    <a class="navbar-brand" href="index.php">Pack &amp; Dash</a>
-    <div class="d-flex gap-2">
-      <a href="customerPage.php" class="btn btn-outline-secondary">Retour</a>
-      <a href="logout.inc.php" class="btn btn-outline-danger">Déconnexion</a>
-    </div>
-  </div>
-</nav>
 
 <div class="container my-4">
   <div class="mb-4">
