@@ -27,27 +27,33 @@ include 'moverList.inc.php';
   <div class="mb-4">
     <h1 class="h3 mb-3">Propositions pour : <?= htmlspecialchars($annonce['titre']) ?></h1>
     <p class="mb-1"><strong>Description :</strong> <?= htmlspecialchars($annonce['description']) ?></p>
-    <p class="mb-1"><strong>Date :</strong> <?= htmlspecialchars($annonce['date']) ?></p>
+    <p class="mb-1"><strong>Nombre de demenageur :</strong> <?= htmlspecialchars($annonce['nbreDemenageur']) ?></p>
+    <p class="mb-1"><strong>Date de demenagement :</strong> <?= htmlspecialchars($annonce['date']) ?></p>
     <p class="mb-0"><strong>Volume :</strong> <?= htmlspecialchars($annonce['volumeTotal']) ?> m³</p>
+    <p class="mb-0"><strong>Poids total :</strong> <?= htmlspecialchars($annonce['poidsTotal']) ?> kg</p>
+    <p class="mb-0"><strong>Publié le :</strong> <?= htmlspecialchars($annonce['date_de_publication']) ?> à <?= htmlspecialchars($annonce['heure']) ?></p>
   </div>
 
   <h2 class="h4 mb-3">Liste des propositions</h2>
 
   <?php if (empty($propositions)): ?>
-    <div class="alert alert-info">Aucune proposition n'a encore été faite pour cette annonce.</div>
+    <div class="alert alert-info min-vh-100">Aucune proposition n'a encore été faite pour cette annonce.</div>
   <?php else: ?>
     <div class="row">
       <?php foreach ($propositions as $p): ?>
         <div class="col-md-6 mb-3">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100 shadow-sm bg-light">
             <div class="card-body">
               <h5 class="card-title"><?= htmlspecialchars($p['demenageurName'] ?? 'Déménageur') ?></h5>
               <p><strong>Prix :</strong> <?= htmlspecialchars($p['prixPropose']) ?> €</p>
               <p><strong>Message :</strong> <?= htmlspecialchars($p['message']) ?></p>
               <p><strong>Contact :</strong> <?= htmlspecialchars($p['contact'] ?? '') ?></p>
               <p><strong>Adresse :</strong> <?= htmlspecialchars($p['adresse'] ?? '') ?></p>
-              <a href="acceptanceList.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>"
+              <div class="d-flex flex-row gap-3">
+                <a href="accepterPropostion.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>"
                  class="btn btn-success">Accepter</a>
+                 <a href="refuserProposition.php?idProposition=<?= (int)$p['idProposition'] ?>&idAnnonce=<?= (int)$idAnnonce ?>" class="btn btn-danger">Refuser</a>
+              </div>
             </div>
           </div>
         </div>
