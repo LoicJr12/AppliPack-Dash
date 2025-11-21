@@ -70,27 +70,9 @@ $stmtLogements = $conn->prepare("
 ");
 
 function niceAsc($v){ return ($v === 'oui') ? 'Oui' : 'Non'; }
+include('header.inc.php');
+include('navbar.inc.php');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><?= htmlspecialchars($title) ?></title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/footer.inc.css">
-</head>
-<body class="d-flex flex-column min-vh-100">
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="index.php">Pack &amp; Dash</a>
-      <div class="d-flex">
-        <a href="logout.inc.php" class="btn btn-outline-danger">Déconnexion</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- CONTENU -->
   <main class="container flex-fill mt-4">
     <h1 class="mb-4">
