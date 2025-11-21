@@ -1,22 +1,9 @@
-<?php include 'updateAnnonce.inc.php'; ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title><?= htmlspecialchars($title) ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-<nav class="navbar navbar-light bg-white border-bottom">
-  <div class="container">
-    <a class="navbar-brand" href="index.php">Pack &amp; Dash</a>
-    <div class="d-flex gap-2">
-      <a href="customerPage.php" class="btn btn-outline-secondary">Retour</a>
-      <a href="logout.inc.php" class="btn btn-outline-danger">Déconnexion</a>
-    </div>
-  </div>
-</nav>
+<?php 
+  $title  = "Modifier Annonce - Pack & Dash";
+  include 'updateAnnonce.inc.php'; 
+  include 'header.inc.php';
+  include 'navbar.inc.php';
+?>
 
 <div class="container my-4">
   <h1 class="h4 mb-3">Modifier l’annonce</h1>
@@ -120,5 +107,6 @@
     </div>
   </form>
 </div>
+<?php include 'footer.inc.php';?>
 </body>
 </html>
