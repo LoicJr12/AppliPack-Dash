@@ -132,11 +132,19 @@ endif;
                 <p class="card-text"><small class="text-muted">Publié le : <?php echo htmlspecialchars($annonce['date_de_publication']); ?></small></p>
             </div>
             <?php if($taille !== 0):?>
-                <div class="card-footer d-flex flex-row">
-                    <?php foreach($listImage as $image): ?>
-                        <img class="card-img-bottom w-80" src="<?php echo $image['url']; ?>" alt="photo maison">
-                    <?php endforeach; ?>
-                </div>
+                <?php if($taille > 1): ?>      
+                    <div class="card-footer d-flex flex-row gap-2 overflow-x-auto">
+                        <?php foreach($listImage as $image): ?>
+                            <img class="card-img-bottom w-50 rounded-top" src="<?php echo $image['url']; ?>" alt="photo maison">
+                        <?php endforeach; ?>
+                    </div>
+                <?php else: ?>
+                    <div class="card-footer d-flex flex-row overflow-x-auto">
+                        <?php foreach($listImage as $image): ?>
+                            <img class="card-img-bottom w-80 rounded-top" src="<?php echo $image['url']; ?>" alt="photo maison">
+                        <?php endforeach; ?>
+                    </div> 
+                <?php endif;?>  
             <?php else:?>
                 <div class="card-footer d-flex justify-content-center align-items-center p-2">
                     <div class="alert alert-primary justify-content-center d-flex align-items-center w-100" role="alert">
