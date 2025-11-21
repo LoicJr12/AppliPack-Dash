@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errorMessage = "Veuillez les champs noms, prenoms et contact au bon format";
         }
 
-        if(($type === 'demenageur') && ($nom === '' || $prenom === '' || !ctype_digit($contact_demenageur))){
+        if(($type === 'demenageur') && ($nomEntreprise === '' || $adresse === '' || !ctype_digit($contact_demenageur))){
             $errorMessage = "Veuillez les champs nomEntreprise, Addrese et contact au bon format";
         }
     } else {
