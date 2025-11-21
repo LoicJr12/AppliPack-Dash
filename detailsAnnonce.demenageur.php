@@ -7,7 +7,7 @@
         exit();
     }
 
-    $idAnnonce = $_GET['ref'];
+    $idAnnonce = $_GET['ref'] ?? null;
 
 if(isset($idAnnonce)):
     try {

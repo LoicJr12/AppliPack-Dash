@@ -52,9 +52,9 @@
           <p class="card-text"><strong>Statut :</strong>
             <?php if($proposition['statut'] === 'en attente') { ?>
               <span class="badge text-bg-warning"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-            <?php } elseif($proposition['statut'] === 'Acceptée') { ?>
+            <?php } elseif($proposition['statut'] === 'acceptee') { ?>
               <span class="badge text-bg-success"><?php echo htmlspecialchars($proposition['statut']); ?></span>
-            <?php } elseif($proposition['statut'] === 'Refusée') { ?>
+            <?php } elseif($proposition['statut'] === 'refusee') { ?>
               <span class="badge text-bg-danger"><?php echo htmlspecialchars($proposition['statut']); ?></span>
             <?php } ?>
           </p>
@@ -84,23 +84,24 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau message</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="" method="post">
-          <input type="hidden" class="form-control" id="recipient-name" name="idClient">
-          <input type="hidden" class="form-control idPropositionHidden" id="recipient-n" name="idProposition">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name" readonly>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text" name="message"></textarea>
+            <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">quiter</button>
-        <button type="button" class="btn btn-primary">envoyer le message</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
       </div>
     </div>
   </div>

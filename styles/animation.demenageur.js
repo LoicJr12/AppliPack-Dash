@@ -1,5 +1,5 @@
 /*--------------------Animation Message--------------------*/
-const fenetreMessage = document.getElementById('exampleModal')
+const fenetreMessage = document.getElementById('exampleModal');
 if (fenetreMessage) {
     fenetreMessage.addEventListener('show.bs.modal', event => {
     // Button that triggered the modal
@@ -23,26 +23,6 @@ if (fenetreMessage) {
     })
 }
 /*----------------------------------------------------------*/
-
-/*------------------- Animation voir details ----------------*/
-const fenetreDetailsAnnonce = document.getElementById('exampleModal1')
-if (fenetreDetailsAnnonce) {
-    fenetreDetailsAnnonce.addEventListener('show.bs.modal', event => {
-        const buttonDetails = event.relatedTarget
-        const valeur = buttonDetails.getAttribute('data-id')
-        const modalBodyInput = fenetreDetailsAnnonce.querySelector('.modal-body .idAnnonceDetails')
-        // Update the modal's content.
-        const modalTitle = fenetreDetailsAnnonce.querySelector('.modal-title1')
-        modalTitle.textContent = `Details anonnce #REF-ID${valeur}`
-        modalBodyInput.value = valeur
-        window.location.href = 'demenageur.inc.php?refDetails=' + valeur;
-    })
-}
-/*-----------------------------------------------------------*/
-/*fetch("getAnnonceDetails.php?refDetails=" + encodeURIComponent(valeur))
-            .then(res => res.text())
-            .catch(err => console.error("Erreur fetch :", err));*/
-
 
 /*--------Recuperation id Proposition pour annonce------------*/
 document.querySelectorAll('.faire-proposition').forEach( btn => {

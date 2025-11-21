@@ -1,13 +1,14 @@
         <?php
             session_start();
 
+            // Définir une valeur de session pour l'utilisateur pour faire le test 6 ou 10 ou 11
+            $_SESSION['idUtilisateur'] = 10;
+
             //Vérifier si l'utilisateur est connecté
             if (!isset($_SESSION['idUtilisateur'])) {
                 header("Location: login.inc.php");
                 exit();
             }
-
-            
 
             $title = 'Dashboard Demenageur';
             include('header.inc.php');
@@ -37,6 +38,8 @@
                         }catch(PDOException $e){
                             echo "Erreur : " . $e->getMessage();
                         }
+
+                        // Définir une valeur par défaut pour le nom de l'utilisateur pour faire le test
                         $lastName = 'User-Test';
                         if(isset($nomEntreprise)){
                             $lastName=$nomEntreprise;
