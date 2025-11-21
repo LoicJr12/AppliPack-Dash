@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,9 @@
             <link rel="stylesheet" href="styles/formProposition.css">
             <link rel="stylesheet" href="styles/demenageur.inc.css">
             <link rel="stylesheet" href="styles/footer.inc.css">
-        <?php elseif($title === 'Details Annonce'): ?>
+        <?php elseif($title === 'Details Annonce' || $title === 'Espace Client - Pack & Dash' 
+            || $title === 'Liste des propositions - Pack & Dash' || $title  === 'Modifier Annonce - Pack & Dash'): 
+        ?>
             <link rel="stylesheet" href="styles/navbar.inc.css">
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php elseif($title === 'Details Annonce'): ?>
@@ -28,4 +30,4 @@
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php endif; ?>
     </head>
-    <body>
+    <body class="<?php if($title === 'Liste des propositions - Pack & Dash'): $bg = 'bg-light min-vh-100'; echo $bg; endif; ?>">
