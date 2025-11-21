@@ -3,7 +3,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once 'bdd.php';
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$title  = "Modifier l’annonce - Pack & Dash";
 $errors = [];
 $conn   = connectToDatabase();
 $conn->set_charset('utf8mb4');
