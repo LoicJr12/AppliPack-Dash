@@ -26,7 +26,7 @@
                     </div>
                 <?php endif; ?>
                 </div>
-                <form action="traitementLogin.php" method="POST" class="formulaire">
+                <form action="traitementLogin.php" method="POST" class="formulaire mb-5">
                     <div class="mb-3">
                         <h3 class="auth-text">AUTHENTIFICATION</h3>
                         <span class="text-body-secondary">Entrer vos détails de connexion</span>
