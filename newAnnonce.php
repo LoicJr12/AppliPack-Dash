@@ -91,11 +91,11 @@
         </div>
         <div class="col-md-6">
           <label class="form-label">Statut</label>
-          <input type="text" name="statut_depart" class="form-control" placeholder="meublé / vide / ...">
+          <input type="text" name="statut_depart" class="form-control" value="depart" readonly>
         </div>
         <div class="col-md-6">
           <label class="form-label">Type de logement</label>
-          <input type="text" name="type_depart_logement" class="form-control" placeholder="appartement / maison / ...">
+          <input type="text" name="type_depart_logement" class="form-control" placeholder="appartement / maison / studio / chambre ...">
           <!-- NOTE: ce champ est optionnel. Si tu veux le stocker, ajoute une colonne dédiée (ex: typeLogement). -->
         </div>
       </div>
@@ -123,11 +123,11 @@
         </div>
         <div class="col-md-6">
           <label class="form-label">Statut</label>
-          <input type="text" name="statut_arrivee" class="form-control">
+          <input type="text" name="statut_arrivee" class="form-control" value="arrivee" readonly>
         </div>
         <div class="col-md-6">
           <label class="form-label">Type de logement</label>
-          <input type="text" name="type_arrivee_logement" class="form-control">
+          <input type="text" name="type_arrivee_logement" class="form-control" placeholder="appartement / maison / studio / chambre ...">
           <!-- NOTE: idem, champ libre non stocké par défaut -->
         </div>
       </div>
