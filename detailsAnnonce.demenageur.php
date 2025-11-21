@@ -17,9 +17,9 @@ if(isset($idAnnonce)):
         $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        //------------ Recup annonce et client ------------------------
         $sql = "SELECT * FROM annonce a 
-            JOIN client c ON c.idClient = a.idClient
-            JOIN image i ON i.idAnnonce = a.idAnnonce 
+            JOIN client c ON c.idClient = a.idClient 
             WHERE a.idAnnonce = :idAnnonce";
         $request = $bdd->prepare($sql);
         $request->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
@@ -36,7 +36,7 @@ if(isset($idAnnonce)):
         $request->execute();
         $logementArrivee = $request->fetch(PDO::FETCH_ASSOC);
 
-        //------------ Recup logement ville arrivée ------------------------
+        //------------ Recup logement ville depart ------------------------
         $sql = "SELECT idAnnonce, ville as villeDepart, etage, ascenceur, type FROM logement WHERE statut = :statut AND idAnnonce = :idAnnonce";
         $request = $bdd->prepare($sql);
         $statut = 'depart';
@@ -44,6 +44,17 @@ if(isset($idAnnonce)):
         $request->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
         $request->execute();
         $logementDepart  = $request->fetch(PDO::FETCH_ASSOC);
+
+        //----------------- Recup image annonce --------------------------
+        $sql = "SELECT * FROM image WHERE idAnnonce = :idAnnonce";
+        $request = $bdd->prepare($sql);
+        $request->bindParam(':idAnnonce', $idAnnonce, PDO::PARAM_INT);
+        $request->execute();
+        $listImage  = array();
+        while($image = $request->fetch(PDO::FETCH_ASSOC)){
+            $listImage[] = $image;
+        }
+        $taille = count($listImage);
 
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
@@ -57,7 +68,7 @@ endif;
     include('navbar.inc.php');
 ?>
 <main>
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-5 min-vh-100">
         <div class="d-flex flex-col mb-3">
             <a href="demenageur.inc.php" class="btn btn-primary text-white"><i class="fa-solid fa-arrow-left" ></i>Retour</a>
         </div>
@@ -120,10 +131,20 @@ endif;
                 </div>
                 <p class="card-text"><small class="text-muted">Publié le : <?php echo htmlspecialchars($annonce['date_de_publication']); ?></small></p>
             </div>
-            <?php if(isset($annonce['url'])):?>
-                <img src="<?php echo $annonce['url']; ?>" class="card-img-bottom" alt="photo maison">
+            <?php if($taille !== 0):?>
+                <div class="card-footer d-flex flex-row">
+                    <?php foreach($listImage as $image): ?>
+                        <img class="card-img-bottom w-80" src="<?php echo $image['url']; ?>" alt="photo maison">
+                    <?php endforeach; ?>
+                </div>
             <?php else:?>
-                <img src="" class="card-img-bottom" alt="photo maison">
+                <div class="card-footer d-flex justify-content-center align-items-center p-2">
+                    <div class="alert alert-primary justify-content-center d-flex align-items-center w-100" role="alert">
+                        <div>
+                            <h5>Aucune image pour cette annonce</h5>
+                        </div>
+                    </div>
+                </div>
             <?php endif;?>
         </div>
     </div>
