@@ -19,7 +19,8 @@
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php elseif($title === 'Details Annonce'): ?>
             <link rel="stylesheet" href="styles/navbar.inc.css">
-            <link rel="stylesheet" href="styles/detailsAnnonce.demenageur.css">
+            <link rel="stylesheet" href="styles/footer.inc.css">
+        <?php elseif($title === 'Details Annonce'): ?>
             <link rel="stylesheet" href="styles/footer.inc.css">
         <?php else: ?>
             <link rel="stylesheet" href="styles/navbar.inc.css">
