@@ -34,8 +34,8 @@
             $request->bindParam(':idAnnonce', $idAnnonce);
             */
 
-            $sql = "INSERT INTO message (idMessage, contenu, emeteur, recepteur, date) 
-                    VALUES (:idMessage, :contenu, :emeteur, :recepteur, :date)";
+            $sql = "INSERT INTO message (contenu, emeteur, recepteur, date) 
+                    VALUES (:contenu, :emeteur, :recepteur, :date)";
             $request = $bdd->prepare($sql);
             $request->bindParam(':contenu', $contenu);
             $request->bindParam(':emeteur', $emeteur);
