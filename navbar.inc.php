@@ -41,7 +41,7 @@
                     <a class="nav-link inbox" href="#" title="mes propositions">
                         <i class="fa-solid fa-inbox"></i>
                     </a>
-                    <a class="nav-link inbox" href="#" title="deconnexion">
+                    <a class="nav-link inbox" href="logout.inc.php" title="deconnexion">
                         <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
                 <?php endif; ?>
