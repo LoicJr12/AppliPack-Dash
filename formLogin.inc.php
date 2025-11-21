@@ -43,9 +43,6 @@
                             Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                         </div>
                     </div>
-                    <div class="mb-3 text-link">
-                        <p class="form-text">Forgot password? <a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Clic here !</a></p>
-                    </div>
                     <div class="mb-3 buttons-form">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="reset" class="btn btn-danger">reset</button>
