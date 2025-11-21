@@ -52,7 +52,7 @@ else:
     echo "Impossible de recupérer l'annonce a afficher";
 endif;
 
-    $title = 'Delais Annonce';
+    $title = 'Details Annonce';
     include('header.inc.php');
     include('navbar.inc.php');
 ?>
