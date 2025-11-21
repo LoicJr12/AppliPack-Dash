@@ -3,6 +3,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once 'bdd.php';
 
 $conn = connectToDatabase();
+if ($conn->connect_error) {
+  die("Échec de la connexion à la base de données : " . $conn->connect_error);
+}
 $conn->set_charset('utf8mb4');
 
 // Vérifie que l’utilisateur est connecté
@@ -18,9 +21,7 @@ if ($idAnnonce <= 0) {
 }
 
 // 1️⃣ Récupération de l'annonce
-$sqlAnnonce = "SELECT idAnnonce, titre, description, date, volumeTotal
-               FROM Annonce
-               WHERE idAnnonce = ?";
+$sqlAnnonce = "SELECT * FROM Annonce WHERE idAnnonce = ?";
 $stmtA = $conn->prepare($sqlAnnonce);
 $stmtA->bind_param("i", $idAnnonce);
 $stmtA->execute();
@@ -42,7 +43,7 @@ $sqlProps = "
     d.idDemenageur,
     d.nomEntreprise AS demenageurName,
     d.contact,
-    d.addresse AS adresse
+    d.adresse AS adresse
   FROM Proposition AS p
   LEFT JOIN Demenageur AS d
          ON p.idDemenageur = d.idDemenageur
