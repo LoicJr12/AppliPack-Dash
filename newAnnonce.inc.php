@@ -54,16 +54,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // --- Logement départ ---
     $ville_depart    = trim($_POST['ville_depart'] ?? '');
     $etage_depart    = (int)($_POST['etage_depart'] ?? 0);
-    $asc_depart      = (($_POST['ascenseur_depart'] ?? '') === 'oui') ? 'oui' : 'non';
-    $statut_depart   = trim($_POST['statut_depart'] ?? '');
-    $type_depart     = 'depart';
+    $asc_depart      = (($_POST['ascenseur_depart'] ?? '') === 'oui') ? 1 : 0;
+    $statut_depart   = 'depart';
+    $type_depart     = trim($_POST['type_depart_logement'] ?? 'non renseigne');
 
     // --- Logement arrivée ---
     $ville_arrivee   = trim($_POST['ville_arrivee'] ?? '');
     $etage_arrivee   = (int)($_POST['etage_arrivee'] ?? 0);
-    $asc_arrivee     = (($_POST['ascenseur_arrivee'] ?? '') === 'oui') ? 'oui' : 'non';
-    $statut_arrivee  = trim($_POST['statut_arrivee'] ?? '');
-    $type_arrivee    = 'arrivee';
+    $asc_arrivee     = (($_POST['ascenseur_arrivee'] ?? '') === 'oui') ? 1 : 0;
+    $statut_arrivee  = 'arrivee';
+    $type_arrivee    = trim($_POST['type_arrivee_logement'] ?? 'non renseigne');
 
     // --- Validations minimales ---
     if ($titre === '')               $errors[] = "Le titre est requis.";
