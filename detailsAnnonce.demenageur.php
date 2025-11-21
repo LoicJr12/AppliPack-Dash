@@ -76,9 +76,8 @@ endif;
                         <h5>Depart</h5>
                         <p class="card-text"><strong>Ville Depart :</strong> <?php echo htmlspecialchars($logementDepart['villeDepart']); ?></p>
                         <p class="card-text"><strong>Type :</strong> <?php echo htmlspecialchars($logementDepart['type']); ?></p>
-                        <p class="card-text"><strong>A l'etage :</strong> <?php echo htmlspecialchars($logementDepart['etage']); ?></p>
-                        <?php if($logementDepart['etage'] !== 0):?>
-                            <p class="card-text"><strong>A l'etage :</strong> <?php echo htmlspecialchars($logementArrivee['etage']); ?></p>
+                        <?php if($logementDepart['etage'] != 0):?>
+                            <p class="card-text"><strong>A l'etage :</strong> <?php echo htmlspecialchars($logementDepart['etage']); ?></p>
                         <?php else:?>
                             <p class="card-text"><strong>A l'etage :</strong> Non</p>
                         <?php endif;?>
@@ -92,12 +91,12 @@ endif;
                         <h5>Arrivee</h5>
                         <p class="card-text"><strong>Ville Arrivee :</strong> <?php echo htmlspecialchars($logementArrivee['villeArrivee']); ?></p>
                         <p class="card-text"><strong>Type :</strong> <?php echo htmlspecialchars($logementArrivee['type']); ?></p>
-                        <?php if($logementArrivee['etage'] !== 0):?>
+                        <?php if($logementArrivee['etage'] != 0):?>
                             <p class="card-text"><strong>A l'etage :</strong> <?php echo htmlspecialchars($logementArrivee['etage']); ?></p>
                         <?php else:?>
                             <p class="card-text"><strong>A l'etage :</strong> Non</p>
                         <?php endif;?>
-                        <?php if($logementArrivee['ascenceur'] === 0):?>
+                        <?php if($logementArrivee['ascenceur'] == 0):?>
                             <p class="card-text"><strong>Ascenceur :</strong> Non </p>
                         <?php else:?>
                             <p class="card-text"><strong>Ascenceur :</strong> Oui </p>
