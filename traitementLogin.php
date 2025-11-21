@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3>Vous allez être redirigé vers votre espace utilisateur. 🔐</h3>
+                    <h3>Vous allez être redirigé vers votre espace utilisateur. 👨‍💻👩‍💻</h3>
                 </div>
             </div>
         </div>

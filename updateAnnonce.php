@@ -82,7 +82,7 @@
             <option value="non" <?= ($depart['ascenceur']==='non'?'selected':'') ?>>Non</option>
           </select>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 d-none">
           <label class="form-label">Statut</label>
           <input type="text" name="statut_depart" class="form-control" value="<?= htmlspecialchars($depart['statut']) ?>">
         </div>
@@ -108,8 +108,8 @@
             <option value="non" <?= ($arrivee['ascenceur']==='non'?'selected':'') ?>>Non</option>
           </select>
         </div>
-        <div class="col-md-6">
-          <label class="form-label">Statut</label>
+        <div class="col-md-6 d-none">
+          <label class="form-label" >Statut</label>
           <input type="text" name="statut_arrivee" class="form-control" value="<?= htmlspecialchars($arrivee['statut']) ?>">
         </div>
       </div>

@@ -75,13 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Départ
     $ville_depart    = trim($_POST['ville_depart'] ?? '');
     $etage_depart    = (int)($_POST['etage_depart'] ?? 0);
-    $asc_depart      = (($_POST['ascenseur_depart'] ?? '') === 'oui') ? 'oui' : 'non';
+    $asc_depart      = (($_POST['ascenseur_depart'] ?? '') === 'oui') ? 1 : 0;
     $statut_depart   = trim($_POST['statut_depart'] ?? '');
 
     // Arrivée
     $ville_arrivee   = trim($_POST['ville_arrivee'] ?? '');
     $etage_arrivee   = (int)($_POST['etage_arrivee'] ?? 0);
-    $asc_arrivee     = (($_POST['ascenseur_arrivee'] ?? '') === 'oui') ? 'oui' : 'non';
+    $asc_arrivee     = (($_POST['ascenseur_arrivee'] ?? '') === 'oui') ? 1 : 0;
     $statut_arrivee  = trim($_POST['statut_arrivee'] ?? '');
 
     // validations basiques
