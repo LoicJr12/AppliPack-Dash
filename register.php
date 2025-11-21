@@ -24,10 +24,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $prenom        = trim($_POST['prenom'] ?? '');
     $nomEntreprise = trim($_POST['nomEntreprise'] ?? '');
     $adresse       = trim($_POST['adresse'] ?? '');
+    $contact_demenageur = trim($_POST['contact_demenageur'] ?? '');
+    $contact_client = trim($_POST['contact_client'] ?? '');
 
     // Vérifications rapides
     if ($userName === '' || $email === '' || $password === '' || ($type !== 'client' && $type !== 'demenageur')) {
-        $errorMessage = "Veuillez remplir tous les champs obligatoires.";
+        $errorMessage = "Veuillez remplir tous les champs.";
+        if(($type === 'client') && ($nom === '' || $prenom === '' || !ctype_digit($contact_client))){
+            $errorMessage = "Veuillez les champs noms, prenoms et contact au bon format";
+        }
+
+        if(($type === 'demenageur') && ($nom === '' || $prenom === '' || !ctype_digit($contact_demenageur))){
+            $errorMessage = "Veuillez les champs nomEntreprise, Addrese et contact au bon format";
+        }
     } else {
         try {
             $conn = connectToDatabase();
@@ -54,22 +63,18 @@ $stmtUser->close();
 
             // 2) Insertion dans Client ou Demenageur
             if ($type === 'client') {
-                // ⚠️ contact pas demandé dans le formulaire → on met une chaîne vide
-                $contact = '';
                 $sqlClient = "INSERT INTO Client (nom, prenom, contact, idUtilisateur)
                               VALUES (?, ?, ?, ?)";
                 $stmtClient = $conn->prepare($sqlClient);
-                $stmtClient->bind_param("sssi", $nom, $prenom, $contact, $idUtilisateur);
+                $stmtClient->bind_param("sssi", $nom, $prenom, $contact_client, $idUtilisateur);
                 $stmtClient->execute();
                 $stmtClient->close();
             } else {
                 // type === 'demenageur'
-                // ⚠️ idem, contact vide si ta table le demande
-                $contact = '';
                 $sqlDem = "INSERT INTO Demenageur (nomEntreprise, adresse, contact, idUtilisateur)
                            VALUES (?, ?, ?, ?)";
                 $stmtDem = $conn->prepare($sqlDem);
-                $stmtDem->bind_param("sssi", $nomEntreprise, $adresse, $contact, $idUtilisateur);
+                $stmtDem->bind_param("sssi", $nomEntreprise, $adresse, $contact_demenageur, $idUtilisateur);
                 $stmtDem->execute();
                 $stmtDem->close();
             }
