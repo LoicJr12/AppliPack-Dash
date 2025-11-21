@@ -9,8 +9,9 @@
 
     $idProposition = $_GET['idProposition'] ?? null;
     $idAnnonce = $_GET['idAnnonce'] ?? null;
+    $idDemenageur = $_GET['id'] ?? null;
 
-    if (isset($idProposition) && isset($idAnnonce)) {
+    if (isset($idProposition) && isset($idAnnonce) && isset($idDemenageur)) {
         try {
             $servername = 'localhost';
             $username = 'root';         
@@ -18,15 +19,6 @@
             $bdd = new PDO("mysql:host=$servername;dbname=pack&dash", $username, $password);
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $sql = "SELECT idDemenageur FROM demenageur WHERE idUtilisateur = :idUtilisateur";
-            $request = $bdd->prepare($sql);
-            $request->bindParam(':idUtilisateur', $_SESSION['idUtilisateur'], PDO::PARAM_INT);
-            $request->execute();
-            $utilisateur = $request->fetch(PDO::FETCH_ASSOC);
-            if (isset($utilisateur)) {
-                $idDemenageur = $utilisateur['idDemenageur'];
-            }
-
             $sql = "UPDATE proposition SET statut = :statut
                 WHERE idProposition = :idProposition AND idDemenageur = :idDemenageur AND idAnnonce = :idAnnonce";
             $request = $bdd->prepare($sql);
@@ -38,10 +30,10 @@
             $request->execute();
             $resultat = $request->rowCount();
             if ($resultat === 0) {
-                header("Location: moverList.php?erreur=proposition_non_acceptee");
+                header("Location: moverList.php?id=" . (int)$idAnnonce . "&erreur=proposition_non_acceptee");
                 exit();
             }else {
-                header("Location: moverList.php?success=proposition_acceptee");
+                header("Location: moverList.php?id=" . (int)$idAnnonce . "&success=proposition_acceptee");
                 exit();
             }
         } catch (PDOException $e) {
