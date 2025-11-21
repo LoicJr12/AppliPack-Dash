@@ -4,7 +4,10 @@
             <img src="assets/removebg-logo.png" alt="logo Pack & Dash" width="60" height="40" class="d-inline-block align-text-bottom">
             Pack & Dash
         </a>
-        <?php if($title !== 'Dashboard Demenageur' && $title !== 'Details Annonce'): ?>
+        <?php if($title !== 'Dashboard Demenageur' && $title !== 'Details Annonce' 
+            && $title !== 'Espace Client - Pack & Dash' && $title !== 'Liste des propositions - Pack & Dash' 
+            && $title  !== 'Modifier Annonce - Pack & Dash'): 
+        ?>
         <div class="listLink">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -23,46 +26,66 @@
         </div>
         <?php endif; ?>
         <div class="listButton list-Buttons">
-            <?php if($title !== 'Dashboard Demenageur' && $title !== 'Details Annonce'): ?>
+            <?php if($title !== 'Dashboard Demenageur' && $title !== 'Details Annonce' && $title !== 'Espace Client - Pack & Dash' 
+            && $title !== 'Liste des propositions - Pack & Dash' && $title !== 'Modifier Annonce - Pack & Dash'): 
+            ?>
                 <a class="nav-link link-connection" href="login.inc.php">Se connecter</a>
                 <a class="nav-link link-inscription" href="register.php">S'inscrire</a>
             <?php else: ?>
-                <?php if($title !== 'Details Annonce'): ?>
+                <?php if($title !== 'Details Annonce' && $title !== 'Espace Client - Pack & Dash'
+                    && $title !== 'Liste des propositions - Pack & Dash' && $title  !== 'Modifier Annonce - Pack & Dash'): 
+                ?>
                     <a class="nav-link rocket" href="#" title="nouvelles annonces">
                         <i class="fa-solid fa-rocket"></i>
                     </a>
                     <a class="nav-link inbox" href="#" title="mes propositions">
                         <i class="fa-solid fa-inbox"></i>
                     </a>
-                    <a class="nav-link inbox" href="#" title="mon profil">
-                        <i class="fa-solid fa-user"></i>
+                    <a class="nav-link inbox" href="#" title="deconnexion">
+                        <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
                 <?php endif; ?>
             <?php endif; ?>
-            <?php if($title !== 'Details Annonce'): ?>
+            <?php if($title !== 'Details Annonce' && $title !== 'Espace Client - Pack & Dash' 
+                && $title !== 'Liste des propositions - Pack & Dash' && $title  !== 'Modifier Annonce - Pack & Dash'): 
+            ?>
                 <div class="bar-diviseur-vertical"></div>
                 <a href="#" title="dark mode">
                     <i class="fa-solid fa-cloud-moon"></i>
                 </a>
             <?php endif; ?>
         </div>
-        <?php if($title !== 'Details Annonce'): ?>
+        <?php if($title !== 'Details Annonce' && $title !== 'Espace Client - Pack & Dash' 
+            && $title !== 'Liste des propositions - Pack & Dash' && $title  !== 'Modifier Annonce - Pack & Dash'): 
+        ?>
             <div class="menu-icon">
                 <i class="fa-solid fa-bars"></i>
                 <span>Menu</span>
             </div>
         <?php else: ?>
-            <div class="deconnexion-details">
-                <a class="nav-link deconnexion bg-danger" href="logout.inc.php">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Deconnexion</span>
-                </a>
-            </div>
+            <?php if($title === 'Liste des propositions - Pack & Dash' || $title  === 'Modifier Annonce - Pack & Dash'): ?>
+                <div class="d-flex flex-row gap-2">
+                    <a href="customerPage.php" class="btn btn-outline-primary">Retour</a>
+                    <a class="btn btn-danger" href="logout.inc.php">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Deconnexion</span>
+                    </a>
+                </div>
+            <?php else: ?>
+                <div class="deconnexion-details">
+                    <a class="nav-link deconnexion bg-danger" href="logout.inc.php">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Deconnexion</span>
+                    </a>
+                </div>
+            <?php endif; ?>   
         <?php endif; ?>
     </div>
 </nav>
 
-<?php if($title !== 'Details Annonce'): ?>
+<?php if($title !== 'Details Annonce' && $title !== 'Espace Client - Pack & Dash' 
+    && $title !== 'Liste des propositions - Pack & Dash' && $title  !== 'Modifier Annonce - Pack & Dash'): 
+?>
     <div class="menu-responsive">
         <div class="listLink-menu">
             <ul class="navbar-nav">
